@@ -1,0 +1,8 @@
+__pycache__/
+*.py[cod]
+out/
+*.vcd
+.Xil/
+*.jou
+*.log
+!evidence/*.log

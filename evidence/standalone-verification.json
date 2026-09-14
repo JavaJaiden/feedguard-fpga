@@ -1,0 +1,19 @@
+{
+  "project": "feedguard-fpga",
+  "source_commit": "f82a0f0127c6d2c4a394f4f00706604d8d47ef1d",
+  "python_test_methods": 9,
+  "python_status": "PASS",
+  "model_demo_status": "PASS",
+  "rtl_status": "NOT RUN: Icarus Verilog unavailable",
+  "generic_synthesis_status": "NOT RUN",
+  "physical_hardware_tested": false,
+  "github_repository_created": false,
+  "independent_test_execution": true,
+  "source_sha256": {
+    "test_models.py": "6e4b02a01ad948cf9da364266f9eb6c6d80c2f45eccfa9de69af3ba9633f5228",
+    "feedguard.py": "684421ab23fffb2a1f9a2b28a9fb59e1b4a760cf9e1fe11bf2febbf2d629812e",
+    "rtl/feedguard.sv": "6a9486437ba83475e74855118a44a98341c30bd8e46456e75f27444de57bb3ac",
+    "sim/check_rtl.py": "f612abdf4f5b9cfd2e167fff8bff58a65da80e0d62da9a380b3ed7fbe52d802c",
+    ".github/workflows/verify.yml": "0ddd1b34113c621924495dbd3b81b08c5046863e9c06b6c864252af3a96a8185"
+  }
+}
