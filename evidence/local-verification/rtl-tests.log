@@ -1,0 +1,7 @@
+PASS envelope: 410 vectors, input gaps and output stalls
+/Users/jaiden/Documents/Codex_FPGA_Handoff/feedguard-fpga/out/rtl/envelope_tb.sv:47: $finish called at 797160000 (1ps)
+PASS sequence: 1013 vectors, session resets and output stalls
+/Users/jaiden/Documents/Codex_FPGA_Handoff/feedguard-fpga/out/rtl/sequence_tb.sv:39: $finish called at 61440000 (1ps)
+PASS integrated FeedGuard: 438 packets; 6962 input / 21027 output stall cycles; reset flush
+/Users/jaiden/Documents/Codex_FPGA_Handoff/feedguard-fpga/out/rtl/feedguard_top_tb.sv:80: $finish called at 482220000 (1ps)
+{"status": "PASS", "engine": "Icarus Verilog", "counts": {"envelope_vectors": 410, "sequence_vectors": 1013, "integrated_packets": 438}, "hardware_tested": false}

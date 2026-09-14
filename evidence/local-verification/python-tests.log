@@ -1,0 +1,17 @@
+test_bad_message_length_and_count (test_models.FeedTests.test_bad_message_length_and_count) ... ok
+test_capacity_and_unknown_types (test_models.FeedTests.test_capacity_and_unknown_types) ... ok
+test_each_truncation_rejected (test_models.FeedTests.test_each_truncation_rejected) ... ok
+test_gap_duplicate_overlap_and_repair (test_models.FeedTests.test_gap_duplicate_overlap_and_repair) ... ok
+test_header_endianness (test_models.FeedTests.test_header_endianness) ... ok
+test_heartbeat_never_seeds_or_advances (test_models.FeedTests.test_heartbeat_never_seeds_or_advances) ... ok
+test_malformed_packet_never_commits (test_models.FeedTests.test_malformed_packet_never_commits) ... ok
+test_messages_random (test_models.FeedTests.test_messages_random) ... ok
+test_session_reset_and_overflow (test_models.FeedTests.test_session_reset_and_overflow) ... ok
+test_empty_trace_rejected (test_replay.ReplayTests.test_empty_trace_rejected) ... ok
+test_export_keeps_classifications_and_escapes_script_markup (test_replay.ReplayTests.test_export_keeps_classifications_and_escapes_script_markup) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.020s
+
+OK
+Wrote 8 packets to /var/folders/9_/wv598cvx6gg5p7yzbck0rjcr0000gn/T/tmpz2d7cvgy/report.html

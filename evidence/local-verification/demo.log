@@ -1,0 +1,8 @@
+seq=100 count=3 bootstrap      skip=0 take=3 expected=103
+seq=102 count=0 heartbeat      skip=0 take=0 expected=103
+seq=100 count=3 duplicate      skip=0 take=0 expected=103
+seq=106 count=2 gap            skip=0 take=0 expected=103
+seq=103 count=3 in_order       skip=0 take=3 expected=106
+seq=106 count=2 in_order       skip=0 take=2 expected=108
+seq=107 count=3 overlap        skip=1 take=2 expected=110
+seq=110 count=1 malformed      skip=0 take=0 expected=110

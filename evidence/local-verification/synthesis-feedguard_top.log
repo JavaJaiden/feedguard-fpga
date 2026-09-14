@@ -1,0 +1,1882 @@
+
+-- Running command `read_verilog -sv rtl/feedguard.sv; synth -top feedguard_top; check -assert; stat' --
+
+1. Executing Verilog-2005 frontend: rtl/feedguard.sv
+Parsing SystemVerilog input from `rtl/feedguard.sv' to AST representation.
+Generating RTLIL representation for module `\omdc_envelope'.
+Generating RTLIL representation for module `\sequence_guard'.
+Generating RTLIL representation for module `\feedguard_top'.
+Successfully finished Verilog frontend.
+
+2. Executing SYNTH pass.
+
+2.1. Executing HIERARCHY pass (managing design hierarchy).
+
+2.1.1. Analyzing design hierarchy..
+Top module:  \feedguard_top
+Used module:     \sequence_guard
+Used module:     \omdc_envelope
+
+2.1.2. Analyzing design hierarchy..
+Top module:  \feedguard_top
+Used module:     \sequence_guard
+Used module:     \omdc_envelope
+Removed 0 unused modules.
+
+2.2. Executing PROC pass (convert processes to netlists).
+
+2.2.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+2.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$rtl/feedguard.sv:161$47 in module sequence_guard.
+Marked 7 switch rules as full_case in process $proc$rtl/feedguard.sv:147$35 in module sequence_guard.
+Marked 2 switch rules as full_case in process $proc$rtl/feedguard.sv:100$29 in module omdc_envelope.
+Marked 13 switch rules as full_case in process $proc$rtl/feedguard.sv:37$4 in module omdc_envelope.
+Removed a total of 0 dead cases.
+
+2.2.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 22 assignments to connections.
+
+2.2.4. Executing PROC_INIT pass (extract init attributes).
+
+2.2.5. Executing PROC_ARST pass (detect async resets in processes).
+
+2.2.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~27 debug messages>
+
+2.2.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\sequence_guard.$proc$rtl/feedguard.sv:161$47'.
+     1/7: $0\expected[32:0]
+     2/7: $0\initialized[0:0]
+     3/7: $0\out_expected[32:0]
+     4/7: $0\out_take[7:0]
+     5/7: $0\out_skip[7:0]
+     6/7: $0\out_kind[2:0]
+     7/7: $0\out_valid[0:0]
+Creating decoders for process `\sequence_guard.$proc$rtl/feedguard.sv:147$35'.
+     1/32: $7\next_expected[32:0]
+     2/32: $7\take[7:0]
+     3/32: $7\skip[7:0]
+     4/32: $7\kind[2:0]
+     5/32: $6\kind[2:0]
+     6/32: $6\next_expected[32:0]
+     7/32: $6\take[7:0]
+     8/32: $6\skip[7:0]
+     9/32: $5\kind[2:0]
+    10/32: $5\next_expected[32:0]
+    11/32: $5\take[7:0]
+    12/32: $5\skip[7:0]
+    13/32: $4\next_initialized[0:0]
+    14/32: $4\next_expected[32:0]
+    15/32: $4\take[7:0]
+    16/32: $4\kind[2:0]
+    17/32: $4\skip[7:0]
+    18/32: $3\kind[2:0]
+    19/32: $3\next_initialized[0:0]
+    20/32: $3\next_expected[32:0]
+    21/32: $3\take[7:0]
+    22/32: $3\skip[7:0]
+    23/32: $2\kind[2:0]
+    24/32: $2\next_initialized[0:0]
+    25/32: $2\next_expected[32:0]
+    26/32: $2\take[7:0]
+    27/32: $2\skip[7:0]
+    28/32: $1\kind[2:0]
+    29/32: $1\next_initialized[0:0]
+    30/32: $1\next_expected[32:0]
+    31/32: $1\take[7:0]
+    32/32: $1\skip[7:0]
+Creating decoders for process `\omdc_envelope.$proc$rtl/feedguard.sv:100$29'.
+     1/17: $0\errors[3:0]
+     2/17: $0\phase[2:0]
+     3/17: $0\completed[8:0]
+     4/17: $0\stamp[63:0]
+     5/17: $0\seq[31:0]
+     6/17: $0\count[7:0]
+     7/17: $0\first_type[15:0]
+     8/17: $0\remaining[15:0]
+     9/17: $0\msg_size[15:0]
+    10/17: $0\size[15:0]
+    11/17: $0\pos[15:0]
+    12/17: $0\out_error[3:0]
+    13/17: $0\out_first_type[15:0]
+    14/17: $0\out_timestamp[63:0]
+    15/17: $0\out_count[7:0]
+    16/17: $0\out_seq[31:0]
+    17/17: $0\out_valid[0:0]
+Creating decoders for process `\omdc_envelope.$proc$rtl/feedguard.sv:37$4'.
+     1/47: $3\final_errors[2:2]
+     2/47: $2\final_errors[1:1]
+     3/47: $1\final_errors[0:0]
+     4/47: $2\n_first_type[15:0] [15:8]
+     5/47: $8\n_errors[2:2]
+     6/47: $7\n_errors[2:2]
+     7/47: $5\n_completed[8:0]
+     8/47: $4\n_phase[2:0]
+     9/47: $2\n_first_type[15:0] [7:0]
+    10/47: $6\n_errors[2:2]
+    11/47: $5\n_errors[2:2]
+    12/47: $3\n_completed[8:0]
+    13/47: $3\n_phase[2:0]
+    14/47: $4\n_first_type[15:8]
+    15/47: $6\n_completed[8:0]
+    16/47: $2\n_msg_size[15:0] [15:8]
+    17/47: $2\n_msg_size[15:0] [7:0]
+    18/47: $4\n_errors[2:2]
+    19/47: $3\n_first_type[7:0]
+    20/47: $3\n_remaining[15:0]
+    21/47: $2\n_phase[2:0]
+    22/47: $3\n_errors[2:2]
+    23/47: $2\n_completed[8:0]
+    24/47: $4\n_completed[8:0]
+    25/47: $2\n_remaining[15:0]
+    26/47: $1\n_stamp[63:0] [63:56]
+    27/47: $1\n_stamp[63:0] [39:32]
+    28/47: $1\n_stamp[63:0] [23:16]
+    29/47: $1\n_stamp[63:0] [7:0]
+    30/47: $1\n_seq[31:0] [23:16]
+    31/47: $1\n_seq[31:0] [7:0]
+    32/47: $1\n_size[15:0] [7:0]
+    33/47: $1\n_stamp[63:0] [55:48]
+    34/47: $1\n_seq[31:0] [15:8]
+    35/47: $1\n_stamp[63:0] [47:40]
+    36/47: $1\n_stamp[63:0] [15:8]
+    37/47: $2\n_errors[2:2]
+    38/47: $1\n_phase[2:0]
+    39/47: $1\n_completed[8:0]
+    40/47: $1\n_stamp[63:0] [31:24]
+    41/47: $1\n_size[15:0] [15:8]
+    42/47: $1\n_count[7:0]
+    43/47: $1\n_first_type[15:0]
+    44/47: $1\n_remaining[15:0]
+    45/47: $1\n_msg_size[15:0]
+    46/47: $1\n_seq[31:0] [31:24]
+    47/47: $1\n_errors[3:3]
+
+2.2.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\sequence_guard.\kind' from process `\sequence_guard.$proc$rtl/feedguard.sv:147$35'.
+No latch inferred for signal `\sequence_guard.\skip' from process `\sequence_guard.$proc$rtl/feedguard.sv:147$35'.
+No latch inferred for signal `\sequence_guard.\take' from process `\sequence_guard.$proc$rtl/feedguard.sv:147$35'.
+No latch inferred for signal `\sequence_guard.\next_expected' from process `\sequence_guard.$proc$rtl/feedguard.sv:147$35'.
+No latch inferred for signal `\sequence_guard.\next_initialized' from process `\sequence_guard.$proc$rtl/feedguard.sv:147$35'.
+No latch inferred for signal `\omdc_envelope.\n_pos' from process `\omdc_envelope.$proc$rtl/feedguard.sv:37$4'.
+No latch inferred for signal `\omdc_envelope.\n_size' from process `\omdc_envelope.$proc$rtl/feedguard.sv:37$4'.
+No latch inferred for signal `\omdc_envelope.\n_msg_size' from process `\omdc_envelope.$proc$rtl/feedguard.sv:37$4'.
+No latch inferred for signal `\omdc_envelope.\n_remaining' from process `\omdc_envelope.$proc$rtl/feedguard.sv:37$4'.
+No latch inferred for signal `\omdc_envelope.\n_first_type' from process `\omdc_envelope.$proc$rtl/feedguard.sv:37$4'.
+No latch inferred for signal `\omdc_envelope.\n_count' from process `\omdc_envelope.$proc$rtl/feedguard.sv:37$4'.
+No latch inferred for signal `\omdc_envelope.\n_seq' from process `\omdc_envelope.$proc$rtl/feedguard.sv:37$4'.
+No latch inferred for signal `\omdc_envelope.\n_stamp' from process `\omdc_envelope.$proc$rtl/feedguard.sv:37$4'.
+No latch inferred for signal `\omdc_envelope.\n_completed' from process `\omdc_envelope.$proc$rtl/feedguard.sv:37$4'.
+No latch inferred for signal `\omdc_envelope.\n_phase' from process `\omdc_envelope.$proc$rtl/feedguard.sv:37$4'.
+No latch inferred for signal `\omdc_envelope.\n_errors' from process `\omdc_envelope.$proc$rtl/feedguard.sv:37$4'.
+No latch inferred for signal `\omdc_envelope.\final_errors' from process `\omdc_envelope.$proc$rtl/feedguard.sv:37$4'.
+
+2.2.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\sequence_guard.\out_valid' using process `\sequence_guard.$proc$rtl/feedguard.sv:161$47'.
+  created $dff cell `$procdff$1415' with positive edge clock.
+Creating register for signal `\sequence_guard.\out_kind' using process `\sequence_guard.$proc$rtl/feedguard.sv:161$47'.
+  created $dff cell `$procdff$1416' with positive edge clock.
+Creating register for signal `\sequence_guard.\out_skip' using process `\sequence_guard.$proc$rtl/feedguard.sv:161$47'.
+  created $dff cell `$procdff$1417' with positive edge clock.
+Creating register for signal `\sequence_guard.\out_take' using process `\sequence_guard.$proc$rtl/feedguard.sv:161$47'.
+  created $dff cell `$procdff$1418' with positive edge clock.
+Creating register for signal `\sequence_guard.\out_expected' using process `\sequence_guard.$proc$rtl/feedguard.sv:161$47'.
+  created $dff cell `$procdff$1419' with positive edge clock.
+Creating register for signal `\sequence_guard.\initialized' using process `\sequence_guard.$proc$rtl/feedguard.sv:161$47'.
+  created $dff cell `$procdff$1420' with positive edge clock.
+Creating register for signal `\sequence_guard.\expected' using process `\sequence_guard.$proc$rtl/feedguard.sv:161$47'.
+  created $dff cell `$procdff$1421' with positive edge clock.
+Creating register for signal `\omdc_envelope.\out_valid' using process `\omdc_envelope.$proc$rtl/feedguard.sv:100$29'.
+  created $dff cell `$procdff$1422' with positive edge clock.
+Creating register for signal `\omdc_envelope.\out_seq' using process `\omdc_envelope.$proc$rtl/feedguard.sv:100$29'.
+  created $dff cell `$procdff$1423' with positive edge clock.
+Creating register for signal `\omdc_envelope.\out_count' using process `\omdc_envelope.$proc$rtl/feedguard.sv:100$29'.
+  created $dff cell `$procdff$1424' with positive edge clock.
+Creating register for signal `\omdc_envelope.\out_timestamp' using process `\omdc_envelope.$proc$rtl/feedguard.sv:100$29'.
+  created $dff cell `$procdff$1425' with positive edge clock.
+Creating register for signal `\omdc_envelope.\out_first_type' using process `\omdc_envelope.$proc$rtl/feedguard.sv:100$29'.
+  created $dff cell `$procdff$1426' with positive edge clock.
+Creating register for signal `\omdc_envelope.\out_error' using process `\omdc_envelope.$proc$rtl/feedguard.sv:100$29'.
+  created $dff cell `$procdff$1427' with positive edge clock.
+Creating register for signal `\omdc_envelope.\pos' using process `\omdc_envelope.$proc$rtl/feedguard.sv:100$29'.
+  created $dff cell `$procdff$1428' with positive edge clock.
+Creating register for signal `\omdc_envelope.\size' using process `\omdc_envelope.$proc$rtl/feedguard.sv:100$29'.
+  created $dff cell `$procdff$1429' with positive edge clock.
+Creating register for signal `\omdc_envelope.\msg_size' using process `\omdc_envelope.$proc$rtl/feedguard.sv:100$29'.
+  created $dff cell `$procdff$1430' with positive edge clock.
+Creating register for signal `\omdc_envelope.\remaining' using process `\omdc_envelope.$proc$rtl/feedguard.sv:100$29'.
+  created $dff cell `$procdff$1431' with positive edge clock.
+Creating register for signal `\omdc_envelope.\first_type' using process `\omdc_envelope.$proc$rtl/feedguard.sv:100$29'.
+  created $dff cell `$procdff$1432' with positive edge clock.
+Creating register for signal `\omdc_envelope.\count' using process `\omdc_envelope.$proc$rtl/feedguard.sv:100$29'.
+  created $dff cell `$procdff$1433' with positive edge clock.
+Creating register for signal `\omdc_envelope.\seq' using process `\omdc_envelope.$proc$rtl/feedguard.sv:100$29'.
+  created $dff cell `$procdff$1434' with positive edge clock.
+Creating register for signal `\omdc_envelope.\stamp' using process `\omdc_envelope.$proc$rtl/feedguard.sv:100$29'.
+  created $dff cell `$procdff$1435' with positive edge clock.
+Creating register for signal `\omdc_envelope.\completed' using process `\omdc_envelope.$proc$rtl/feedguard.sv:100$29'.
+  created $dff cell `$procdff$1436' with positive edge clock.
+Creating register for signal `\omdc_envelope.\phase' using process `\omdc_envelope.$proc$rtl/feedguard.sv:100$29'.
+  created $dff cell `$procdff$1437' with positive edge clock.
+Creating register for signal `\omdc_envelope.\errors' using process `\omdc_envelope.$proc$rtl/feedguard.sv:100$29'.
+  created $dff cell `$procdff$1438' with positive edge clock.
+
+2.2.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+2.2.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 3 empty switches in `\sequence_guard.$proc$rtl/feedguard.sv:161$47'.
+Removing empty process `sequence_guard.$proc$rtl/feedguard.sv:161$47'.
+Found and cleaned up 7 empty switches in `\sequence_guard.$proc$rtl/feedguard.sv:147$35'.
+Removing empty process `sequence_guard.$proc$rtl/feedguard.sv:147$35'.
+Found and cleaned up 4 empty switches in `\omdc_envelope.$proc$rtl/feedguard.sv:100$29'.
+Removing empty process `omdc_envelope.$proc$rtl/feedguard.sv:100$29'.
+Found and cleaned up 13 empty switches in `\omdc_envelope.$proc$rtl/feedguard.sv:37$4'.
+Removing empty process `omdc_envelope.$proc$rtl/feedguard.sv:37$4'.
+Cleaned up 27 empty switches.
+
+2.2.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module feedguard_top.
+Optimizing module sequence_guard.
+<suppressed ~18 debug messages>
+Optimizing module omdc_envelope.
+<suppressed ~37 debug messages>
+
+2.3. Executing OPT_EXPR pass (perform const folding).
+Optimizing module feedguard_top.
+Optimizing module sequence_guard.
+Optimizing module omdc_envelope.
+
+2.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \feedguard_top..
+Finding unused cells or wires in module \sequence_guard..
+Finding unused cells or wires in module \omdc_envelope..
+Removed 1 unused cells and 355 unused wires.
+<suppressed ~3 debug messages>
+
+2.5. Executing CHECK pass (checking for obvious problems).
+Checking module feedguard_top...
+Checking module sequence_guard...
+Checking module omdc_envelope...
+Found and reported 0 problems.
+
+2.6. Executing OPT pass (performing simple optimizations).
+
+2.6.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module feedguard_top.
+Optimizing module sequence_guard.
+Optimizing module omdc_envelope.
+
+2.6.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\feedguard_top'.
+Computing hashes of 3 cells of `\feedguard_top'.
+Finding duplicate cells in `\feedguard_top'.
+Finding identical cells in module `\sequence_guard'.
+Computing hashes of 158 cells of `\sequence_guard'.
+Finding duplicate cells in `\sequence_guard'.
+Finding identical cells in module `\omdc_envelope'.
+Computing hashes of 681 cells of `\omdc_envelope'.
+Finding duplicate cells in `\omdc_envelope'.
+Computing hashes of 203 cells of `\omdc_envelope'.
+Finding duplicate cells in `\omdc_envelope'.
+<suppressed ~1434 debug messages>
+Removed a total of 478 cells.
+
+2.6.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \feedguard_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \sequence_guard..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+      Replacing known input bits on port B of cell $procmux$304: \initialized -> 1'1
+  Analyzing evaluation results.
+    dead port 1/2 on $mux $procmux$436.
+    dead port 1/2 on $mux $procmux$430.
+    dead port 1/2 on $mux $procmux$424.
+    dead port 1/2 on $mux $procmux$418.
+    dead port 1/2 on $mux $procmux$412.
+    dead port 1/2 on $mux $procmux$406.
+    dead port 1/2 on $mux $procmux$403.
+    dead port 1/2 on $mux $procmux$397.
+    dead port 1/2 on $mux $procmux$394.
+    dead port 1/2 on $mux $procmux$388.
+    dead port 1/2 on $mux $procmux$385.
+    dead port 1/2 on $mux $procmux$379.
+    dead port 1/2 on $mux $procmux$376.
+    dead port 1/2 on $mux $procmux$370.
+    dead port 1/2 on $mux $procmux$367.
+    dead port 1/2 on $mux $procmux$361.
+    dead port 1/2 on $mux $procmux$358.
+    dead port 1/2 on $mux $procmux$355.
+    dead port 1/2 on $mux $procmux$349.
+    dead port 1/2 on $mux $procmux$346.
+    dead port 1/2 on $mux $procmux$343.
+    dead port 1/2 on $mux $procmux$337.
+    dead port 1/2 on $mux $procmux$334.
+    dead port 1/2 on $mux $procmux$331.
+    dead port 1/2 on $mux $procmux$325.
+    dead port 1/2 on $mux $procmux$322.
+    dead port 1/2 on $mux $procmux$319.
+    dead port 1/2 on $mux $procmux$313.
+    dead port 1/2 on $mux $procmux$310.
+    dead port 1/2 on $mux $procmux$307.
+    dead port 1/2 on $mux $procmux$301.
+    dead port 1/2 on $mux $procmux$298.
+    dead port 1/2 on $mux $procmux$295.
+    dead port 2/2 on $mux $procmux$292.
+    dead port 1/2 on $mux $procmux$286.
+    dead port 1/2 on $mux $procmux$283.
+    dead port 1/2 on $mux $procmux$280.
+    dead port 2/2 on $mux $procmux$277.
+    dead port 1/2 on $mux $procmux$271.
+    dead port 1/2 on $mux $procmux$268.
+    dead port 1/2 on $mux $procmux$265.
+    dead port 2/2 on $mux $procmux$262.
+    dead port 1/2 on $mux $procmux$256.
+    dead port 1/2 on $mux $procmux$253.
+    dead port 1/2 on $mux $procmux$250.
+    dead port 2/2 on $mux $procmux$247.
+    dead port 1/2 on $mux $procmux$241.
+    dead port 1/2 on $mux $procmux$238.
+    dead port 1/2 on $mux $procmux$235.
+    dead port 2/2 on $mux $procmux$232.
+    dead port 1/2 on $mux $procmux$229.
+    dead port 1/2 on $mux $procmux$223.
+    dead port 1/2 on $mux $procmux$220.
+    dead port 1/2 on $mux $procmux$217.
+    dead port 2/2 on $mux $procmux$214.
+    dead port 1/2 on $mux $procmux$211.
+    dead port 1/2 on $mux $procmux$205.
+    dead port 1/2 on $mux $procmux$202.
+    dead port 1/2 on $mux $procmux$199.
+    dead port 2/2 on $mux $procmux$196.
+    dead port 1/2 on $mux $procmux$193.
+    dead port 1/2 on $mux $procmux$187.
+    dead port 1/2 on $mux $procmux$184.
+    dead port 1/2 on $mux $procmux$181.
+    dead port 2/2 on $mux $procmux$178.
+    dead port 1/2 on $mux $procmux$175.
+    dead port 1/2 on $mux $procmux$169.
+    dead port 1/2 on $mux $procmux$166.
+    dead port 1/2 on $mux $procmux$163.
+    dead port 2/2 on $mux $procmux$160.
+    dead port 1/2 on $mux $procmux$157.
+    dead port 1/2 on $mux $procmux$154.
+    dead port 1/2 on $mux $procmux$148.
+    dead port 1/2 on $mux $procmux$145.
+    dead port 1/2 on $mux $procmux$142.
+    dead port 2/2 on $mux $procmux$139.
+    dead port 1/2 on $mux $procmux$136.
+    dead port 1/2 on $mux $procmux$133.
+    dead port 1/2 on $mux $procmux$127.
+    dead port 1/2 on $mux $procmux$124.
+    dead port 1/2 on $mux $procmux$121.
+    dead port 2/2 on $mux $procmux$118.
+    dead port 1/2 on $mux $procmux$115.
+    dead port 1/2 on $mux $procmux$112.
+    dead port 1/2 on $mux $procmux$106.
+    dead port 1/2 on $mux $procmux$103.
+    dead port 1/2 on $mux $procmux$100.
+    dead port 2/2 on $mux $procmux$97.
+    dead port 1/2 on $mux $procmux$94.
+    dead port 1/2 on $mux $procmux$91.
+Running muxtree optimizer on module \omdc_envelope..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 2/2 on $mux $procmux$879.
+    dead port 2/2 on $mux $procmux$877.
+    dead port 1/17 on $pmux $procmux$985.
+    dead port 2/17 on $pmux $procmux$985.
+    dead port 3/17 on $pmux $procmux$985.
+    dead port 4/17 on $pmux $procmux$985.
+    dead port 5/17 on $pmux $procmux$985.
+    dead port 6/17 on $pmux $procmux$985.
+    dead port 7/17 on $pmux $procmux$985.
+    dead port 8/17 on $pmux $procmux$985.
+    dead port 9/17 on $pmux $procmux$985.
+    dead port 10/17 on $pmux $procmux$985.
+    dead port 11/17 on $pmux $procmux$985.
+    dead port 12/17 on $pmux $procmux$985.
+    dead port 13/17 on $pmux $procmux$985.
+    dead port 14/17 on $pmux $procmux$985.
+    dead port 15/17 on $pmux $procmux$985.
+    dead port 16/17 on $pmux $procmux$985.
+    dead port 2/2 on $mux $procmux$982.
+    dead port 1/17 on $pmux $procmux$727.
+    dead port 2/17 on $pmux $procmux$727.
+    dead port 3/17 on $pmux $procmux$727.
+    dead port 4/17 on $pmux $procmux$727.
+    dead port 5/17 on $pmux $procmux$727.
+    dead port 6/17 on $pmux $procmux$727.
+    dead port 7/17 on $pmux $procmux$727.
+    dead port 8/17 on $pmux $procmux$727.
+    dead port 9/17 on $pmux $procmux$727.
+    dead port 10/17 on $pmux $procmux$727.
+    dead port 11/17 on $pmux $procmux$727.
+    dead port 12/17 on $pmux $procmux$727.
+    dead port 13/17 on $pmux $procmux$727.
+    dead port 14/17 on $pmux $procmux$727.
+    dead port 15/17 on $pmux $procmux$727.
+    dead port 16/17 on $pmux $procmux$727.
+    dead port 1/17 on $pmux $procmux$855.
+    dead port 2/17 on $pmux $procmux$855.
+    dead port 3/17 on $pmux $procmux$855.
+    dead port 4/17 on $pmux $procmux$855.
+    dead port 5/17 on $pmux $procmux$855.
+    dead port 6/17 on $pmux $procmux$855.
+    dead port 7/17 on $pmux $procmux$855.
+    dead port 8/17 on $pmux $procmux$855.
+    dead port 9/17 on $pmux $procmux$855.
+    dead port 10/17 on $pmux $procmux$855.
+    dead port 11/17 on $pmux $procmux$855.
+    dead port 12/17 on $pmux $procmux$855.
+    dead port 13/17 on $pmux $procmux$855.
+    dead port 14/17 on $pmux $procmux$855.
+    dead port 15/17 on $pmux $procmux$855.
+    dead port 16/17 on $pmux $procmux$855.
+    dead port 2/2 on $mux $procmux$852.
+    dead port 1/17 on $pmux $procmux$1062.
+    dead port 2/17 on $pmux $procmux$1062.
+    dead port 3/17 on $pmux $procmux$1062.
+    dead port 4/17 on $pmux $procmux$1062.
+    dead port 5/17 on $pmux $procmux$1062.
+    dead port 6/17 on $pmux $procmux$1062.
+    dead port 7/17 on $pmux $procmux$1062.
+    dead port 8/17 on $pmux $procmux$1062.
+    dead port 9/17 on $pmux $procmux$1062.
+    dead port 10/17 on $pmux $procmux$1062.
+    dead port 11/17 on $pmux $procmux$1062.
+    dead port 12/17 on $pmux $procmux$1062.
+    dead port 13/17 on $pmux $procmux$1062.
+    dead port 14/17 on $pmux $procmux$1062.
+    dead port 15/17 on $pmux $procmux$1062.
+    dead port 16/17 on $pmux $procmux$1062.
+    dead port 1/17 on $pmux $procmux$959.
+    dead port 2/17 on $pmux $procmux$959.
+    dead port 3/17 on $pmux $procmux$959.
+    dead port 4/17 on $pmux $procmux$959.
+    dead port 5/17 on $pmux $procmux$959.
+    dead port 6/17 on $pmux $procmux$959.
+    dead port 7/17 on $pmux $procmux$959.
+    dead port 8/17 on $pmux $procmux$959.
+    dead port 9/17 on $pmux $procmux$959.
+    dead port 10/17 on $pmux $procmux$959.
+    dead port 11/17 on $pmux $procmux$959.
+    dead port 12/17 on $pmux $procmux$959.
+    dead port 13/17 on $pmux $procmux$959.
+    dead port 14/17 on $pmux $procmux$959.
+    dead port 15/17 on $pmux $procmux$959.
+    dead port 16/17 on $pmux $procmux$959.
+    dead port 1/17 on $pmux $procmux$704.
+    dead port 2/17 on $pmux $procmux$704.
+    dead port 3/17 on $pmux $procmux$704.
+    dead port 4/17 on $pmux $procmux$704.
+    dead port 5/17 on $pmux $procmux$704.
+    dead port 6/17 on $pmux $procmux$704.
+    dead port 7/17 on $pmux $procmux$704.
+    dead port 8/17 on $pmux $procmux$704.
+    dead port 9/17 on $pmux $procmux$704.
+    dead port 10/17 on $pmux $procmux$704.
+    dead port 11/17 on $pmux $procmux$704.
+    dead port 12/17 on $pmux $procmux$704.
+    dead port 13/17 on $pmux $procmux$704.
+    dead port 14/17 on $pmux $procmux$704.
+    dead port 15/17 on $pmux $procmux$704.
+    dead port 16/17 on $pmux $procmux$704.
+    dead port 2/2 on $mux $procmux$701.
+    dead port 2/2 on $mux $procmux$956.
+    dead port 1/17 on $pmux $procmux$1134.
+    dead port 2/17 on $pmux $procmux$1134.
+    dead port 3/17 on $pmux $procmux$1134.
+    dead port 4/17 on $pmux $procmux$1134.
+    dead port 5/17 on $pmux $procmux$1134.
+    dead port 6/17 on $pmux $procmux$1134.
+    dead port 7/17 on $pmux $procmux$1134.
+    dead port 8/17 on $pmux $procmux$1134.
+    dead port 9/17 on $pmux $procmux$1134.
+    dead port 10/17 on $pmux $procmux$1134.
+    dead port 11/17 on $pmux $procmux$1134.
+    dead port 12/17 on $pmux $procmux$1134.
+    dead port 13/17 on $pmux $procmux$1134.
+    dead port 14/17 on $pmux $procmux$1134.
+    dead port 15/17 on $pmux $procmux$1134.
+    dead port 16/17 on $pmux $procmux$1134.
+    dead port 1/17 on $pmux $procmux$830.
+    dead port 2/17 on $pmux $procmux$830.
+    dead port 3/17 on $pmux $procmux$830.
+    dead port 4/17 on $pmux $procmux$830.
+    dead port 5/17 on $pmux $procmux$830.
+    dead port 6/17 on $pmux $procmux$830.
+    dead port 7/17 on $pmux $procmux$830.
+    dead port 8/17 on $pmux $procmux$830.
+    dead port 9/17 on $pmux $procmux$830.
+    dead port 10/17 on $pmux $procmux$830.
+    dead port 11/17 on $pmux $procmux$830.
+    dead port 12/17 on $pmux $procmux$830.
+    dead port 13/17 on $pmux $procmux$830.
+    dead port 14/17 on $pmux $procmux$830.
+    dead port 15/17 on $pmux $procmux$830.
+    dead port 16/17 on $pmux $procmux$830.
+    dead port 2/2 on $mux $procmux$827.
+    dead port 1/17 on $pmux $procmux$680.
+    dead port 2/17 on $pmux $procmux$680.
+    dead port 3/17 on $pmux $procmux$680.
+    dead port 4/17 on $pmux $procmux$680.
+    dead port 5/17 on $pmux $procmux$680.
+    dead port 6/17 on $pmux $procmux$680.
+    dead port 7/17 on $pmux $procmux$680.
+    dead port 8/17 on $pmux $procmux$680.
+    dead port 9/17 on $pmux $procmux$680.
+    dead port 10/17 on $pmux $procmux$680.
+    dead port 11/17 on $pmux $procmux$680.
+    dead port 12/17 on $pmux $procmux$680.
+    dead port 13/17 on $pmux $procmux$680.
+    dead port 14/17 on $pmux $procmux$680.
+    dead port 15/17 on $pmux $procmux$680.
+    dead port 16/17 on $pmux $procmux$680.
+    dead port 2/2 on $mux $procmux$677.
+    dead port 1/17 on $pmux $procmux$1037.
+    dead port 2/17 on $pmux $procmux$1037.
+    dead port 3/17 on $pmux $procmux$1037.
+    dead port 4/17 on $pmux $procmux$1037.
+    dead port 5/17 on $pmux $procmux$1037.
+    dead port 6/17 on $pmux $procmux$1037.
+    dead port 7/17 on $pmux $procmux$1037.
+    dead port 8/17 on $pmux $procmux$1037.
+    dead port 9/17 on $pmux $procmux$1037.
+    dead port 10/17 on $pmux $procmux$1037.
+    dead port 11/17 on $pmux $procmux$1037.
+    dead port 12/17 on $pmux $procmux$1037.
+    dead port 13/17 on $pmux $procmux$1037.
+    dead port 14/17 on $pmux $procmux$1037.
+    dead port 15/17 on $pmux $procmux$1037.
+    dead port 16/17 on $pmux $procmux$1037.
+    dead port 1/17 on $pmux $procmux$932.
+    dead port 2/17 on $pmux $procmux$932.
+    dead port 3/17 on $pmux $procmux$932.
+    dead port 4/17 on $pmux $procmux$932.
+    dead port 5/17 on $pmux $procmux$932.
+    dead port 6/17 on $pmux $procmux$932.
+    dead port 7/17 on $pmux $procmux$932.
+    dead port 8/17 on $pmux $procmux$932.
+    dead port 9/17 on $pmux $procmux$932.
+    dead port 10/17 on $pmux $procmux$932.
+    dead port 11/17 on $pmux $procmux$932.
+    dead port 12/17 on $pmux $procmux$932.
+    dead port 13/17 on $pmux $procmux$932.
+    dead port 14/17 on $pmux $procmux$932.
+    dead port 15/17 on $pmux $procmux$932.
+    dead port 16/17 on $pmux $procmux$932.
+    dead port 1/17 on $pmux $procmux$805.
+    dead port 2/17 on $pmux $procmux$805.
+    dead port 3/17 on $pmux $procmux$805.
+    dead port 4/17 on $pmux $procmux$805.
+    dead port 5/17 on $pmux $procmux$805.
+    dead port 6/17 on $pmux $procmux$805.
+    dead port 7/17 on $pmux $procmux$805.
+    dead port 8/17 on $pmux $procmux$805.
+    dead port 9/17 on $pmux $procmux$805.
+    dead port 10/17 on $pmux $procmux$805.
+    dead port 11/17 on $pmux $procmux$805.
+    dead port 12/17 on $pmux $procmux$805.
+    dead port 13/17 on $pmux $procmux$805.
+    dead port 14/17 on $pmux $procmux$805.
+    dead port 15/17 on $pmux $procmux$805.
+    dead port 16/17 on $pmux $procmux$805.
+    dead port 2/2 on $mux $procmux$802.
+    dead port 1/17 on $pmux $procmux$1112.
+    dead port 2/17 on $pmux $procmux$1112.
+    dead port 3/17 on $pmux $procmux$1112.
+    dead port 4/17 on $pmux $procmux$1112.
+    dead port 5/17 on $pmux $procmux$1112.
+    dead port 6/17 on $pmux $procmux$1112.
+    dead port 7/17 on $pmux $procmux$1112.
+    dead port 8/17 on $pmux $procmux$1112.
+    dead port 9/17 on $pmux $procmux$1112.
+    dead port 10/17 on $pmux $procmux$1112.
+    dead port 11/17 on $pmux $procmux$1112.
+    dead port 12/17 on $pmux $procmux$1112.
+    dead port 13/17 on $pmux $procmux$1112.
+    dead port 14/17 on $pmux $procmux$1112.
+    dead port 15/17 on $pmux $procmux$1112.
+    dead port 16/17 on $pmux $procmux$1112.
+    dead port 1/17 on $pmux $procmux$656.
+    dead port 2/17 on $pmux $procmux$656.
+    dead port 3/17 on $pmux $procmux$656.
+    dead port 4/17 on $pmux $procmux$656.
+    dead port 5/17 on $pmux $procmux$656.
+    dead port 6/17 on $pmux $procmux$656.
+    dead port 7/17 on $pmux $procmux$656.
+    dead port 8/17 on $pmux $procmux$656.
+    dead port 9/17 on $pmux $procmux$656.
+    dead port 10/17 on $pmux $procmux$656.
+    dead port 11/17 on $pmux $procmux$656.
+    dead port 12/17 on $pmux $procmux$656.
+    dead port 13/17 on $pmux $procmux$656.
+    dead port 14/17 on $pmux $procmux$656.
+    dead port 15/17 on $pmux $procmux$656.
+    dead port 16/17 on $pmux $procmux$656.
+    dead port 2/2 on $mux $procmux$653.
+    dead port 2/2 on $mux $procmux$1109.
+    dead port 2/2 on $mux $procmux$1107.
+    dead port 1/17 on $pmux $procmux$907.
+    dead port 2/17 on $pmux $procmux$907.
+    dead port 3/17 on $pmux $procmux$907.
+    dead port 4/17 on $pmux $procmux$907.
+    dead port 5/17 on $pmux $procmux$907.
+    dead port 6/17 on $pmux $procmux$907.
+    dead port 7/17 on $pmux $procmux$907.
+    dead port 8/17 on $pmux $procmux$907.
+    dead port 9/17 on $pmux $procmux$907.
+    dead port 10/17 on $pmux $procmux$907.
+    dead port 11/17 on $pmux $procmux$907.
+    dead port 12/17 on $pmux $procmux$907.
+    dead port 13/17 on $pmux $procmux$907.
+    dead port 14/17 on $pmux $procmux$907.
+    dead port 15/17 on $pmux $procmux$907.
+    dead port 16/17 on $pmux $procmux$907.
+    dead port 1/17 on $pmux $procmux$780.
+    dead port 2/17 on $pmux $procmux$780.
+    dead port 3/17 on $pmux $procmux$780.
+    dead port 4/17 on $pmux $procmux$780.
+    dead port 5/17 on $pmux $procmux$780.
+    dead port 6/17 on $pmux $procmux$780.
+    dead port 7/17 on $pmux $procmux$780.
+    dead port 8/17 on $pmux $procmux$780.
+    dead port 9/17 on $pmux $procmux$780.
+    dead port 10/17 on $pmux $procmux$780.
+    dead port 11/17 on $pmux $procmux$780.
+    dead port 12/17 on $pmux $procmux$780.
+    dead port 13/17 on $pmux $procmux$780.
+    dead port 14/17 on $pmux $procmux$780.
+    dead port 15/17 on $pmux $procmux$780.
+    dead port 16/17 on $pmux $procmux$780.
+    dead port 2/2 on $mux $procmux$777.
+    dead port 1/17 on $pmux $procmux$632.
+    dead port 2/17 on $pmux $procmux$632.
+    dead port 3/17 on $pmux $procmux$632.
+    dead port 4/17 on $pmux $procmux$632.
+    dead port 5/17 on $pmux $procmux$632.
+    dead port 6/17 on $pmux $procmux$632.
+    dead port 7/17 on $pmux $procmux$632.
+    dead port 8/17 on $pmux $procmux$632.
+    dead port 9/17 on $pmux $procmux$632.
+    dead port 10/17 on $pmux $procmux$632.
+    dead port 11/17 on $pmux $procmux$632.
+    dead port 12/17 on $pmux $procmux$632.
+    dead port 13/17 on $pmux $procmux$632.
+    dead port 14/17 on $pmux $procmux$632.
+    dead port 15/17 on $pmux $procmux$632.
+    dead port 16/17 on $pmux $procmux$632.
+    dead port 2/2 on $mux $procmux$629.
+    dead port 2/2 on $mux $procmux$627.
+    dead port 1/17 on $pmux $procmux$1012.
+    dead port 2/17 on $pmux $procmux$1012.
+    dead port 3/17 on $pmux $procmux$1012.
+    dead port 4/17 on $pmux $procmux$1012.
+    dead port 5/17 on $pmux $procmux$1012.
+    dead port 6/17 on $pmux $procmux$1012.
+    dead port 7/17 on $pmux $procmux$1012.
+    dead port 8/17 on $pmux $procmux$1012.
+    dead port 9/17 on $pmux $procmux$1012.
+    dead port 10/17 on $pmux $procmux$1012.
+    dead port 11/17 on $pmux $procmux$1012.
+    dead port 12/17 on $pmux $procmux$1012.
+    dead port 13/17 on $pmux $procmux$1012.
+    dead port 14/17 on $pmux $procmux$1012.
+    dead port 15/17 on $pmux $procmux$1012.
+    dead port 16/17 on $pmux $procmux$1012.
+    dead port 2/2 on $mux $procmux$1009.
+    dead port 1/17 on $pmux $procmux$1084.
+    dead port 2/17 on $pmux $procmux$1084.
+    dead port 3/17 on $pmux $procmux$1084.
+    dead port 4/17 on $pmux $procmux$1084.
+    dead port 5/17 on $pmux $procmux$1084.
+    dead port 6/17 on $pmux $procmux$1084.
+    dead port 7/17 on $pmux $procmux$1084.
+    dead port 8/17 on $pmux $procmux$1084.
+    dead port 9/17 on $pmux $procmux$1084.
+    dead port 10/17 on $pmux $procmux$1084.
+    dead port 11/17 on $pmux $procmux$1084.
+    dead port 12/17 on $pmux $procmux$1084.
+    dead port 13/17 on $pmux $procmux$1084.
+    dead port 14/17 on $pmux $procmux$1084.
+    dead port 15/17 on $pmux $procmux$1084.
+    dead port 16/17 on $pmux $procmux$1084.
+    dead port 1/17 on $pmux $procmux$755.
+    dead port 2/17 on $pmux $procmux$755.
+    dead port 3/17 on $pmux $procmux$755.
+    dead port 4/17 on $pmux $procmux$755.
+    dead port 5/17 on $pmux $procmux$755.
+    dead port 6/17 on $pmux $procmux$755.
+    dead port 7/17 on $pmux $procmux$755.
+    dead port 8/17 on $pmux $procmux$755.
+    dead port 9/17 on $pmux $procmux$755.
+    dead port 10/17 on $pmux $procmux$755.
+    dead port 11/17 on $pmux $procmux$755.
+    dead port 12/17 on $pmux $procmux$755.
+    dead port 13/17 on $pmux $procmux$755.
+    dead port 14/17 on $pmux $procmux$755.
+    dead port 15/17 on $pmux $procmux$755.
+    dead port 16/17 on $pmux $procmux$755.
+    dead port 1/17 on $pmux $procmux$605.
+    dead port 2/17 on $pmux $procmux$605.
+    dead port 3/17 on $pmux $procmux$605.
+    dead port 4/17 on $pmux $procmux$605.
+    dead port 5/17 on $pmux $procmux$605.
+    dead port 6/17 on $pmux $procmux$605.
+    dead port 7/17 on $pmux $procmux$605.
+    dead port 8/17 on $pmux $procmux$605.
+    dead port 9/17 on $pmux $procmux$605.
+    dead port 10/17 on $pmux $procmux$605.
+    dead port 11/17 on $pmux $procmux$605.
+    dead port 12/17 on $pmux $procmux$605.
+    dead port 13/17 on $pmux $procmux$605.
+    dead port 14/17 on $pmux $procmux$605.
+    dead port 15/17 on $pmux $procmux$605.
+    dead port 16/17 on $pmux $procmux$605.
+    dead port 1/17 on $pmux $procmux$882.
+    dead port 2/17 on $pmux $procmux$882.
+    dead port 3/17 on $pmux $procmux$882.
+    dead port 4/17 on $pmux $procmux$882.
+    dead port 5/17 on $pmux $procmux$882.
+    dead port 6/17 on $pmux $procmux$882.
+    dead port 7/17 on $pmux $procmux$882.
+    dead port 8/17 on $pmux $procmux$882.
+    dead port 9/17 on $pmux $procmux$882.
+    dead port 10/17 on $pmux $procmux$882.
+    dead port 11/17 on $pmux $procmux$882.
+    dead port 12/17 on $pmux $procmux$882.
+    dead port 13/17 on $pmux $procmux$882.
+    dead port 14/17 on $pmux $procmux$882.
+    dead port 15/17 on $pmux $procmux$882.
+    dead port 16/17 on $pmux $procmux$882.
+    dead port 2/2 on $mux $procmux$752.
+    dead port 2/2 on $mux $procmux$750.
+Removed 460 multiplexer ports.
+<suppressed ~466 debug messages>
+
+2.6.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \feedguard_top.
+  Optimizing cells in module \sequence_guard.
+  Optimizing cells in module \sequence_guard.
+  Optimizing cells in module \omdc_envelope.
+    New ctrl vector for $pmux cell $procmux$1348: $auto$opt_reduce.cc:137:opt_pmux$1440
+    New ctrl vector for $pmux cell $procmux$1384: $auto$opt_reduce.cc:137:opt_pmux$1442
+    New ctrl vector for $pmux cell $procmux$1254: $auto$opt_reduce.cc:137:opt_pmux$1444
+    New ctrl vector for $pmux cell $procmux$1366: $auto$opt_reduce.cc:137:opt_pmux$1446
+    New ctrl vector for $pmux cell $procmux$1055: { $procmux$1131_CMP $procmux$1110_CMP $auto$opt_reduce.cc:137:opt_pmux$1448 $procmux$1132_CMP }
+    New ctrl vector for $pmux cell $procmux$1272: $auto$opt_reduce.cc:137:opt_pmux$1450
+    New ctrl vector for $pmux cell $procmux$1290: $auto$opt_reduce.cc:137:opt_pmux$1452
+  Optimizing cells in module \omdc_envelope.
+Performed a total of 8 changes.
+
+2.6.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\feedguard_top'.
+Computing hashes of 3 cells of `\feedguard_top'.
+Finding duplicate cells in `\feedguard_top'.
+Finding identical cells in module `\sequence_guard'.
+Computing hashes of 67 cells of `\sequence_guard'.
+Finding duplicate cells in `\sequence_guard'.
+Finding identical cells in module `\omdc_envelope'.
+Computing hashes of 170 cells of `\omdc_envelope'.
+Finding duplicate cells in `\omdc_envelope'.
+Computing hashes of 163 cells of `\omdc_envelope'.
+Finding duplicate cells in `\omdc_envelope'.
+<suppressed ~21 debug messages>
+Removed a total of 7 cells.
+
+2.6.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.6.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \feedguard_top..
+Finding unused cells or wires in module \sequence_guard..
+Finding unused cells or wires in module \omdc_envelope..
+Removed 0 unused cells and 616 unused wires.
+<suppressed ~2 debug messages>
+
+2.6.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module feedguard_top.
+Optimizing module sequence_guard.
+Optimizing module omdc_envelope.
+
+2.6.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+2.6.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \feedguard_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \sequence_guard..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \omdc_envelope..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~259 debug messages>
+
+2.6.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \feedguard_top.
+  Optimizing cells in module \sequence_guard.
+  Optimizing cells in module \omdc_envelope.
+Performed a total of 0 changes.
+
+2.6.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\feedguard_top'.
+Computing hashes of 3 cells of `\feedguard_top'.
+Finding duplicate cells in `\feedguard_top'.
+Finding identical cells in module `\sequence_guard'.
+Computing hashes of 67 cells of `\sequence_guard'.
+Finding duplicate cells in `\sequence_guard'.
+Finding identical cells in module `\omdc_envelope'.
+Computing hashes of 163 cells of `\omdc_envelope'.
+Finding duplicate cells in `\omdc_envelope'.
+Removed a total of 0 cells.
+
+2.6.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.6.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \feedguard_top..
+Finding unused cells or wires in module \sequence_guard..
+Finding unused cells or wires in module \omdc_envelope..
+
+2.6.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module feedguard_top.
+Optimizing module sequence_guard.
+Optimizing module omdc_envelope.
+
+2.6.16. Finished fast OPT passes. (There is nothing left to do.)
+
+2.7. Executing FSM pass (extract and optimize FSM).
+
+2.7.1. Executing FSM_DETECT pass (finding FSMs in design).
+Not marking sequence_guard.out_kind as FSM state register:
+    Register is connected to module port.
+    Users of register don't seem to benefit from recoding.
+Found FSM state register omdc_envelope.phase.
+
+2.7.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+Extracting FSM `\phase' from module `\omdc_envelope'.
+  found $dff cell for state register: $procdff$1437
+  root of input selection tree: $0\phase[2:0]
+  found reset state: 3'000 (guessed from mux tree)
+  found ctrl input: \rst
+  found ctrl input: $logic_and$rtl/feedguard.sv:108$31_Y
+  found ctrl input: \in_last
+  found ctrl input: $auto$opt_reduce.cc:137:opt_pmux$1440
+  found ctrl input: $procmux$1031_CMP
+  found ctrl input: $procmux$1032_CMP
+  found ctrl input: $procmux$1033_CMP
+  found ctrl input: $procmux$1010_CMP
+  found ctrl input: $procmux$1035_CMP
+  found state code: 3'000
+  found ctrl input: $eq$rtl/feedguard.sv:84$17_Y
+  found ctrl input: $eq$rtl/feedguard.sv:76$13_Y
+  found state code: 3'100
+  found state code: 3'011
+  found state code: 3'010
+  found state code: 3'001
+  found ctrl output: $procmux$1033_CMP
+  found ctrl output: $procmux$1035_CMP
+  found ctrl output: $procmux$1032_CMP
+  found ctrl output: $procmux$1031_CMP
+  found ctrl output: $procmux$1010_CMP
+  ctrl inputs: { $logic_and$rtl/feedguard.sv:108$31_Y $eq$rtl/feedguard.sv:84$17_Y $eq$rtl/feedguard.sv:76$13_Y \in_last \rst $auto$opt_reduce.cc:137:opt_pmux$1440 }
+  ctrl outputs: { $procmux$1035_CMP $procmux$1033_CMP $procmux$1032_CMP $procmux$1031_CMP $procmux$1010_CMP $0\phase[2:0] }
+  transition:      3'000 6'0---0- ->      3'000 8'10000000
+  transition:      3'000 6'1--000 ->      3'001 8'10000001
+  transition:      3'000 6'1--001 ->      3'000 8'10000000
+  transition:      3'000 6'1--10- ->      3'000 8'10000000
+  transition:      3'000 6'----1- ->      3'000 8'10000000
+  transition:      3'100 6'0---0- ->      3'100 8'00010100
+  transition:      3'100 6'10-000 ->      3'100 8'00010100
+  transition:      3'100 6'11-000 ->      3'000 8'00010000
+  transition:      3'100 6'1--001 ->      3'100 8'00010100
+  transition:      3'100 6'1--10- ->      3'000 8'00010000
+  transition:      3'100 6'----1- ->      3'000 8'00010000
+  transition:      3'010 6'0---0- ->      3'010 8'01000010
+  transition:      3'010 6'1--000 ->      3'011 8'01000011
+  transition:      3'010 6'1--001 ->      3'010 8'01000010
+  transition:      3'010 6'1--10- ->      3'000 8'01000000
+  transition:      3'010 6'----1- ->      3'000 8'01000000
+  transition:      3'001 6'0---0- ->      3'001 8'00001001
+  transition:      3'001 6'1--000 ->      3'010 8'00001010
+  transition:      3'001 6'1--001 ->      3'001 8'00001001
+  transition:      3'001 6'1--10- ->      3'000 8'00001000
+  transition:      3'001 6'----1- ->      3'000 8'00001000
+  transition:      3'011 6'0---0- ->      3'011 8'00100011
+  transition:      3'011 6'1-0000 ->      3'100 8'00100100
+  transition:      3'011 6'1-1000 ->      3'000 8'00100000
+  transition:      3'011 6'1--001 ->      3'011 8'00100011
+  transition:      3'011 6'1--10- ->      3'000 8'00100000
+  transition:      3'011 6'----1- ->      3'000 8'00100000
+
+2.7.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+Optimizing FSM `$fsm$\phase$1453' from module `\omdc_envelope'.
+
+2.7.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \feedguard_top..
+Finding unused cells or wires in module \sequence_guard..
+Finding unused cells or wires in module \omdc_envelope..
+Removed 8 unused cells and 8 unused wires.
+<suppressed ~9 debug messages>
+
+2.7.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+Optimizing FSM `$fsm$\phase$1453' from module `\omdc_envelope'.
+
+2.7.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+Recoding FSM `$fsm$\phase$1453' from module `\omdc_envelope' using `auto' encoding:
+  mapping auto encoding to `one-hot` for this FSM.
+  000 -> ----1
+  100 -> ---1-
+  010 -> --1--
+  001 -> -1---
+  011 -> 1----
+
+2.7.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+FSM `$fsm$\phase$1453' from module `omdc_envelope':
+-------------------------------------
+
+  Information on FSM $fsm$\phase$1453 (\phase):
+
+  Number of input signals:    6
+  Number of output signals:   8
+  Number of state bits:       5
+
+  Input signals:
+    0: $auto$opt_reduce.cc:137:opt_pmux$1440
+    1: \rst
+    2: \in_last
+    3: $eq$rtl/feedguard.sv:76$13_Y
+    4: $eq$rtl/feedguard.sv:84$17_Y
+    5: $logic_and$rtl/feedguard.sv:108$31_Y
+
+  Output signals:
+    0: $0\phase[2:0] [0]
+    1: $0\phase[2:0] [1]
+    2: $0\phase[2:0] [2]
+    3: $procmux$1010_CMP
+    4: $procmux$1031_CMP
+    5: $procmux$1032_CMP
+    6: $procmux$1033_CMP
+    7: $procmux$1035_CMP
+
+  State encoding:
+    0:    5'----1  <RESET STATE>
+    1:    5'---1-
+    2:    5'--1--
+    3:    5'-1---
+    4:    5'1----
+
+  Transition Table (state_in, ctrl_in, state_out, ctrl_out):
+      0:     0 6'1--001   ->     0 8'10000000
+      1:     0 6'1--10-   ->     0 8'10000000
+      2:     0 6'0---0-   ->     0 8'10000000
+      3:     0 6'----1-   ->     0 8'10000000
+      4:     0 6'1--000   ->     3 8'10000001
+      5:     1 6'11-000   ->     0 8'00010000
+      6:     1 6'1--10-   ->     0 8'00010000
+      7:     1 6'----1-   ->     0 8'00010000
+      8:     1 6'10-000   ->     1 8'00010100
+      9:     1 6'1--001   ->     1 8'00010100
+     10:     1 6'0---0-   ->     1 8'00010100
+     11:     2 6'1--10-   ->     0 8'01000000
+     12:     2 6'----1-   ->     0 8'01000000
+     13:     2 6'1--001   ->     2 8'01000010
+     14:     2 6'0---0-   ->     2 8'01000010
+     15:     2 6'1--000   ->     4 8'01000011
+     16:     3 6'1--10-   ->     0 8'00001000
+     17:     3 6'----1-   ->     0 8'00001000
+     18:     3 6'1--000   ->     2 8'00001010
+     19:     3 6'1--001   ->     3 8'00001001
+     20:     3 6'0---0-   ->     3 8'00001001
+     21:     4 6'1-1000   ->     0 8'00100000
+     22:     4 6'1--10-   ->     0 8'00100000
+     23:     4 6'----1-   ->     0 8'00100000
+     24:     4 6'1-0000   ->     1 8'00100100
+     25:     4 6'1--001   ->     4 8'00100011
+     26:     4 6'0---0-   ->     4 8'00100011
+
+-------------------------------------
+
+2.7.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+Mapping FSM `$fsm$\phase$1453' from module `\omdc_envelope'.
+
+2.8. Executing OPT pass (performing simple optimizations).
+
+2.8.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module feedguard_top.
+Optimizing module sequence_guard.
+Optimizing module omdc_envelope.
+<suppressed ~9 debug messages>
+
+2.8.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\feedguard_top'.
+Computing hashes of 3 cells of `\feedguard_top'.
+Finding duplicate cells in `\feedguard_top'.
+Finding identical cells in module `\sequence_guard'.
+Computing hashes of 67 cells of `\sequence_guard'.
+Finding duplicate cells in `\sequence_guard'.
+Finding identical cells in module `\omdc_envelope'.
+Computing hashes of 225 cells of `\omdc_envelope'.
+Finding duplicate cells in `\omdc_envelope'.
+Computing hashes of 202 cells of `\omdc_envelope'.
+Finding duplicate cells in `\omdc_envelope'.
+Computing hashes of 198 cells of `\omdc_envelope'.
+Finding duplicate cells in `\omdc_envelope'.
+Computing hashes of 197 cells of `\omdc_envelope'.
+Finding duplicate cells in `\omdc_envelope'.
+<suppressed ~84 debug messages>
+Removed a total of 28 cells.
+
+2.8.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \feedguard_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \sequence_guard..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \omdc_envelope..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~255 debug messages>
+
+2.8.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \feedguard_top.
+  Optimizing cells in module \sequence_guard.
+  Optimizing cells in module \omdc_envelope.
+Performed a total of 0 changes.
+
+2.8.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\feedguard_top'.
+Computing hashes of 3 cells of `\feedguard_top'.
+Finding duplicate cells in `\feedguard_top'.
+Finding identical cells in module `\sequence_guard'.
+Computing hashes of 67 cells of `\sequence_guard'.
+Finding duplicate cells in `\sequence_guard'.
+Finding identical cells in module `\omdc_envelope'.
+Computing hashes of 197 cells of `\omdc_envelope'.
+Finding duplicate cells in `\omdc_envelope'.
+Removed a total of 0 cells.
+
+2.8.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding SRST signal on $procdff$1421 ($dff) from module sequence_guard (D = $procmux$51_Y, Q = \expected, rval = 33'000000000000000000000000000000000).
+Adding EN signal on $auto$ff.cc:337:slice$1596 ($sdff) from module sequence_guard (D = \next_expected, Q = \expected).
+Adding SRST signal on $procdff$1420 ($dff) from module sequence_guard (D = $procmux$56_Y, Q = \initialized, rval = 1'0).
+Adding EN signal on $auto$ff.cc:337:slice$1598 ($sdff) from module sequence_guard (D = 1'1, Q = \initialized).
+Adding SRST signal on $procdff$1415 ($dff) from module sequence_guard (D = $procmux$83_Y, Q = \out_valid, rval = 1'0).
+Adding EN signal on $auto$ff.cc:337:slice$1608 ($sdff) from module sequence_guard (D = $procmux$83_Y, Q = \out_valid).
+Adding SRST signal on $procdff$1416 ($dff) from module sequence_guard (D = $procmux$76_Y, Q = \out_kind, rval = 3'000).
+Adding EN signal on $auto$ff.cc:337:slice$1612 ($sdff) from module sequence_guard (D = \kind, Q = \out_kind).
+Adding SRST signal on $procdff$1417 ($dff) from module sequence_guard (D = $procmux$71_Y, Q = \out_skip, rval = 8'00000000).
+Adding EN signal on $auto$ff.cc:337:slice$1614 ($sdff) from module sequence_guard (D = \skip, Q = \out_skip).
+Adding SRST signal on $procdff$1418 ($dff) from module sequence_guard (D = $procmux$66_Y, Q = \out_take, rval = 8'00000000).
+Adding EN signal on $auto$ff.cc:337:slice$1616 ($sdff) from module sequence_guard (D = \take, Q = \out_take).
+Adding SRST signal on $procdff$1419 ($dff) from module sequence_guard (D = $procmux$61_Y, Q = \out_expected, rval = 33'000000000000000000000000000000000).
+Adding EN signal on $auto$ff.cc:337:slice$1618 ($sdff) from module sequence_guard (D = \next_expected, Q = \out_expected).
+Adding SRST signal on $procdff$1424 ($dff) from module omdc_envelope (D = $procmux$568_Y, Q = \out_count, rval = 8'00000000).
+Adding EN signal on $auto$ff.cc:337:slice$1620 ($sdff) from module omdc_envelope (D = \n_count, Q = \out_count).
+Adding SRST signal on $procdff$1425 ($dff) from module omdc_envelope (D = $procmux$560_Y, Q = \out_timestamp, rval = 64'0000000000000000000000000000000000000000000000000000000000000000).
+Adding EN signal on $auto$ff.cc:337:slice$1624 ($sdff) from module omdc_envelope (D = \n_stamp, Q = \out_timestamp).
+Adding SRST signal on $procdff$1426 ($dff) from module omdc_envelope (D = $procmux$552_Y, Q = \out_first_type, rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:337:slice$1628 ($sdff) from module omdc_envelope (D = \n_first_type, Q = \out_first_type).
+Adding SRST signal on $procdff$1427 ($dff) from module omdc_envelope (D = $procmux$544_Y, Q = \out_error, rval = 4'0000).
+Adding EN signal on $auto$ff.cc:337:slice$1632 ($sdff) from module omdc_envelope (D = \final_errors, Q = \out_error).
+Adding SRST signal on $procdff$1428 ($dff) from module omdc_envelope (D = $procmux$536_Y, Q = \pos, rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:337:slice$1636 ($sdff) from module omdc_envelope (D = $procmux$534_Y, Q = \pos).
+Adding SRST signal on $procdff$1438 ($dff) from module omdc_envelope (D = $procmux$456_Y, Q = \errors, rval = 4'0000).
+Adding EN signal on $auto$ff.cc:337:slice$1642 ($sdff) from module omdc_envelope (D = 2'00, Q = \errors [1:0]).
+Adding EN signal on $auto$ff.cc:337:slice$1642 ($sdff) from module omdc_envelope (D = $procmux$454_Y [3:2], Q = \errors [3:2]).
+Adding SRST signal on $procdff$1429 ($dff) from module omdc_envelope (D = $procmux$528_Y, Q = \size, rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:337:slice$1647 ($sdff) from module omdc_envelope (D = $procmux$526_Y, Q = \size).
+Adding SRST signal on $procdff$1430 ($dff) from module omdc_envelope (D = $procmux$520_Y, Q = \msg_size, rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:337:slice$1649 ($sdff) from module omdc_envelope (D = $procmux$518_Y [7:0], Q = \msg_size [7:0]).
+Adding EN signal on $auto$ff.cc:337:slice$1649 ($sdff) from module omdc_envelope (D = $procmux$518_Y [15:8], Q = \msg_size [15:8]).
+Adding SRST signal on $procdff$1431 ($dff) from module omdc_envelope (D = $procmux$512_Y, Q = \remaining, rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:337:slice$1664 ($sdff) from module omdc_envelope (D = $procmux$510_Y, Q = \remaining).
+Adding SRST signal on $procdff$1432 ($dff) from module omdc_envelope (D = $procmux$504_Y, Q = \first_type, rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:337:slice$1672 ($sdff) from module omdc_envelope (D = $procmux$502_Y, Q = \first_type).
+Adding SRST signal on $procdff$1422 ($dff) from module omdc_envelope (D = $procmux$586_Y, Q = \out_valid, rval = 1'0).
+Adding SRST signal on $procdff$1433 ($dff) from module omdc_envelope (D = $procmux$496_Y, Q = \count, rval = 8'00000000).
+Adding EN signal on $auto$ff.cc:337:slice$1675 ($sdff) from module omdc_envelope (D = $procmux$494_Y, Q = \count).
+Adding SRST signal on $procdff$1434 ($dff) from module omdc_envelope (D = $procmux$488_Y, Q = \seq, rval = 0).
+Adding EN signal on $auto$ff.cc:337:slice$1677 ($sdff) from module omdc_envelope (D = $procmux$486_Y, Q = \seq).
+Adding SRST signal on $procdff$1435 ($dff) from module omdc_envelope (D = $procmux$480_Y, Q = \stamp, rval = 64'0000000000000000000000000000000000000000000000000000000000000000).
+Adding EN signal on $auto$ff.cc:337:slice$1679 ($sdff) from module omdc_envelope (D = $procmux$478_Y, Q = \stamp).
+Adding SRST signal on $procdff$1436 ($dff) from module omdc_envelope (D = $procmux$472_Y, Q = \completed, rval = 9'000000000).
+Adding EN signal on $auto$ff.cc:337:slice$1681 ($sdff) from module omdc_envelope (D = $procmux$470_Y, Q = \completed).
+Adding SRST signal on $procdff$1423 ($dff) from module omdc_envelope (D = $procmux$576_Y, Q = \out_seq, rval = 0).
+Adding EN signal on $auto$ff.cc:337:slice$1683 ($sdff) from module omdc_envelope (D = \n_seq, Q = \out_seq).
+Setting constant 0-bit at position 0 on $auto$ff.cc:337:slice$1643 ($sdffe) from module omdc_envelope.
+Setting constant 0-bit at position 1 on $auto$ff.cc:337:slice$1643 ($sdffe) from module omdc_envelope.
+
+2.8.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \feedguard_top..
+Finding unused cells or wires in module \sequence_guard..
+Finding unused cells or wires in module \omdc_envelope..
+Removed 57 unused cells and 91 unused wires.
+<suppressed ~60 debug messages>
+
+2.8.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module feedguard_top.
+Optimizing module sequence_guard.
+<suppressed ~1 debug messages>
+Optimizing module omdc_envelope.
+<suppressed ~2 debug messages>
+
+2.8.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+2.8.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \feedguard_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \sequence_guard..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \omdc_envelope..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~150 debug messages>
+
+2.8.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \feedguard_top.
+  Optimizing cells in module \sequence_guard.
+  Optimizing cells in module \omdc_envelope.
+Performed a total of 0 changes.
+
+2.8.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\feedguard_top'.
+Computing hashes of 3 cells of `\feedguard_top'.
+Finding duplicate cells in `\feedguard_top'.
+Finding identical cells in module `\sequence_guard'.
+Computing hashes of 56 cells of `\sequence_guard'.
+Finding duplicate cells in `\sequence_guard'.
+Computing hashes of 55 cells of `\sequence_guard'.
+Finding duplicate cells in `\sequence_guard'.
+<suppressed ~3 debug messages>
+Finding identical cells in module `\omdc_envelope'.
+Computing hashes of 174 cells of `\omdc_envelope'.
+Finding duplicate cells in `\omdc_envelope'.
+Computing hashes of 169 cells of `\omdc_envelope'.
+Finding duplicate cells in `\omdc_envelope'.
+<suppressed ~15 debug messages>
+Removed a total of 6 cells.
+
+2.8.13. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $auto$ff.cc:337:slice$1619 ($sdffe) from module sequence_guard (D = \next_expected, Q = \out_expected).
+
+2.8.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \feedguard_top..
+Finding unused cells or wires in module \sequence_guard..
+Finding unused cells or wires in module \omdc_envelope..
+Removed 0 unused cells and 5 unused wires.
+<suppressed ~1 debug messages>
+
+2.8.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module feedguard_top.
+Optimizing module sequence_guard.
+<suppressed ~3 debug messages>
+Optimizing module omdc_envelope.
+
+2.8.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+2.8.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \feedguard_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \sequence_guard..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \omdc_envelope..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~150 debug messages>
+
+2.8.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \feedguard_top.
+  Optimizing cells in module \sequence_guard.
+  Optimizing cells in module \omdc_envelope.
+Performed a total of 0 changes.
+
+2.8.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\feedguard_top'.
+Computing hashes of 3 cells of `\feedguard_top'.
+Finding duplicate cells in `\feedguard_top'.
+Finding identical cells in module `\sequence_guard'.
+Computing hashes of 61 cells of `\sequence_guard'.
+Finding duplicate cells in `\sequence_guard'.
+Computing hashes of 58 cells of `\sequence_guard'.
+Finding duplicate cells in `\sequence_guard'.
+<suppressed ~9 debug messages>
+Finding identical cells in module `\omdc_envelope'.
+Computing hashes of 169 cells of `\omdc_envelope'.
+Finding duplicate cells in `\omdc_envelope'.
+Removed a total of 3 cells.
+
+2.8.20. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.8.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \feedguard_top..
+Finding unused cells or wires in module \sequence_guard..
+Finding unused cells or wires in module \omdc_envelope..
+Removed 0 unused cells and 3 unused wires.
+<suppressed ~1 debug messages>
+
+2.8.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module feedguard_top.
+Optimizing module sequence_guard.
+Optimizing module omdc_envelope.
+
+2.8.23. Rerunning OPT passes. (Maybe there is more to do..)
+
+2.8.24. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \feedguard_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \sequence_guard..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \omdc_envelope..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~150 debug messages>
+
+2.8.25. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \feedguard_top.
+  Optimizing cells in module \sequence_guard.
+  Optimizing cells in module \omdc_envelope.
+Performed a total of 0 changes.
+
+2.8.26. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\feedguard_top'.
+Computing hashes of 3 cells of `\feedguard_top'.
+Finding duplicate cells in `\feedguard_top'.
+Finding identical cells in module `\sequence_guard'.
+Computing hashes of 58 cells of `\sequence_guard'.
+Finding duplicate cells in `\sequence_guard'.
+Finding identical cells in module `\omdc_envelope'.
+Computing hashes of 169 cells of `\omdc_envelope'.
+Finding duplicate cells in `\omdc_envelope'.
+Removed a total of 0 cells.
+
+2.8.27. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.8.28. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \feedguard_top..
+Finding unused cells or wires in module \sequence_guard..
+Finding unused cells or wires in module \omdc_envelope..
+
+2.8.29. Executing OPT_EXPR pass (perform const folding).
+Optimizing module feedguard_top.
+Optimizing module sequence_guard.
+Optimizing module omdc_envelope.
+
+2.8.30. Finished fast OPT passes. (There is nothing left to do.)
+
+2.9. Executing WREDUCE pass (reducing word size of cells).
+Removed top 1 bits (of 33) from port A of cell sequence_guard.$add$rtl/feedguard.sv:141$32 ($add).
+Removed top 25 bits (of 33) from port B of cell sequence_guard.$add$rtl/feedguard.sv:141$32 ($add).
+Removed top 1 bits (of 33) from port A of cell sequence_guard.$gt$rtl/feedguard.sv:155$42 ($gt).
+Removed top 1 bits (of 33) from port A of cell sequence_guard.$lt$rtl/feedguard.sv:157$44 ($lt).
+Removed top 1 bits (of 33) from port B of cell sequence_guard.$sub$rtl/feedguard.sv:158$45 ($sub).
+Removed top 25 bits (of 33) from port Y of cell sequence_guard.$sub$rtl/feedguard.sv:158$45 ($sub).
+Removed top 25 bits (of 33) from port A of cell sequence_guard.$sub$rtl/feedguard.sv:158$45 ($sub).
+Removed top 24 bits (of 32) from port B of cell sequence_guard.$sub$rtl/feedguard.sv:158$45 ($sub).
+Removed top 25 bits (of 33) from port Y of cell sequence_guard.$sub$rtl/feedguard.sv:158$46 ($sub).
+Removed top 25 bits (of 33) from port A of cell sequence_guard.$sub$rtl/feedguard.sv:158$46 ($sub).
+Removed top 25 bits (of 33) from port B of cell sequence_guard.$sub$rtl/feedguard.sv:158$46 ($sub).
+Removed top 1 bits (of 3) from mux cell sequence_guard.$procmux$151 ($mux).
+Removed top 1 bits (of 3) from mux cell sequence_guard.$procmux$172 ($mux).
+Removed top 1 bits (of 3) from wire sequence_guard.$6\kind[2:0].
+Removed top 1 bits (of 3) from wire sequence_guard.$7\kind[2:0].
+Removed top 25 bits (of 33) from wire sequence_guard.$sub$rtl/feedguard.sv:158$45_Y.
+Removed top 25 bits (of 33) from wire sequence_guard.$sub$rtl/feedguard.sv:158$46_Y.
+Removed top 1 bits (of 2) from port B of cell omdc_envelope.$auto$simple.cc:194:make_patterns_logic$1652 ($ne).
+Removed top 1 bits (of 17) from port A of cell omdc_envelope.$add$rtl/feedguard.sv:35$1 ($add).
+Removed top 16 bits (of 17) from port B of cell omdc_envelope.$add$rtl/feedguard.sv:35$1 ($add).
+Removed top 21 bits (of 32) from port B of cell omdc_envelope.$gt$rtl/feedguard.sv:42$8 ($gt).
+Removed top 13 bits (of 16) from port B of cell omdc_envelope.$lt$rtl/feedguard.sv:66$9 ($lt).
+Removed top 13 bits (of 16) from port B of cell omdc_envelope.$sub$rtl/feedguard.sv:68$10 ($sub).
+Removed top 15 bits (of 16) from port B of cell omdc_envelope.$eq$rtl/feedguard.sv:84$17 ($eq).
+Removed top 12 bits (of 17) from port B of cell omdc_envelope.$lt$rtl/feedguard.sv:95$20 ($lt).
+Removed top 30 bits (of 32) from port B of cell omdc_envelope.$ge$rtl/feedguard.sv:96$21 ($ge).
+Removed top 1 bits (of 17) from port A of cell omdc_envelope.$ne$rtl/feedguard.sv:96$22 ($ne).
+Removed top 27 bits (of 32) from port B of cell omdc_envelope.$ge$rtl/feedguard.sv:97$24 ($ge).
+Removed top 1 bits (of 9) from port B of cell omdc_envelope.$ne$rtl/feedguard.sv:97$26 ($ne).
+Removed top 8 bits (of 16) from mux cell omdc_envelope.$procmux$518 ($mux).
+Removed top 12 bits (of 16) from port B of cell omdc_envelope.$procmux$1385_CMP0 ($eq).
+Removed top 8 bits (of 16) from mux cell omdc_envelope.$procmux$1384 ($mux).
+Removed top 12 bits (of 16) from port B of cell omdc_envelope.$procmux$1386_CMP0 ($eq).
+Removed top 12 bits (of 16) from port B of cell omdc_envelope.$procmux$1387_CMP0 ($eq).
+Removed top 12 bits (of 16) from port B of cell omdc_envelope.$procmux$1388_CMP0 ($eq).
+Removed top 12 bits (of 16) from port B of cell omdc_envelope.$procmux$1389_CMP0 ($eq).
+Removed top 12 bits (of 16) from port B of cell omdc_envelope.$procmux$1390_CMP0 ($eq).
+Removed top 12 bits (of 16) from port B of cell omdc_envelope.$procmux$1391_CMP0 ($eq).
+Removed top 12 bits (of 16) from port B of cell omdc_envelope.$procmux$1392_CMP0 ($eq).
+Removed top 13 bits (of 16) from port B of cell omdc_envelope.$procmux$1394_CMP0 ($eq).
+Removed top 13 bits (of 16) from port B of cell omdc_envelope.$procmux$1395_CMP0 ($eq).
+Removed top 13 bits (of 16) from port B of cell omdc_envelope.$procmux$1396_CMP0 ($eq).
+Removed top 14 bits (of 16) from port B of cell omdc_envelope.$procmux$1397_CMP0 ($eq).
+Removed top 14 bits (of 16) from port B of cell omdc_envelope.$procmux$1398_CMP0 ($eq).
+Removed top 15 bits (of 16) from port B of cell omdc_envelope.$procmux$1399_CMP0 ($eq).
+Removed top 13 bits (of 16) from port B of cell omdc_envelope.$procmux$1411_CMP0 ($eq).
+Removed cell omdc_envelope.$procmux$903 ($pmux).
+Removed top 8 bits (of 16) from wire omdc_envelope.$procmux$518_Y.
+Removed top 8 bits (of 16) from wire omdc_envelope.$2\n_msg_size[15:0].
+Removed top 8 bits (of 16) from wire omdc_envelope.n_msg_size.
+Removed top 8 bits (of 16) from wire omdc_envelope.msg_size.
+
+2.10. Executing PEEPOPT pass (run peephole optimizers).
+
+2.11. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \feedguard_top..
+Finding unused cells or wires in module \sequence_guard..
+Finding unused cells or wires in module \omdc_envelope..
+Removed 0 unused cells and 8 unused wires.
+<suppressed ~2 debug messages>
+
+2.12. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module feedguard_top:
+  created 0 $alu and 0 $macc cells.
+Extracting $alu and $macc cells in module sequence_guard:
+  creating $macc model for $sub$rtl/feedguard.sv:158$46 ($sub).
+  creating $macc model for $sub$rtl/feedguard.sv:158$45 ($sub).
+  creating $macc model for $add$rtl/feedguard.sv:141$32 ($add).
+  creating $alu model for $macc $add$rtl/feedguard.sv:141$32.
+  creating $alu model for $macc $sub$rtl/feedguard.sv:158$45.
+  creating $alu model for $macc $sub$rtl/feedguard.sv:158$46.
+  creating $alu model for $lt$rtl/feedguard.sv:157$44 ($lt): new $alu
+  creating $alu model for $le$rtl/feedguard.sv:156$43 ($le): new $alu
+  creating $alu model for $gt$rtl/feedguard.sv:155$42 ($gt): merged with $lt$rtl/feedguard.sv:157$44.
+  creating $alu model for $gt$rtl/feedguard.sv:152$37 ($gt): new $alu
+  creating $alu cell for $gt$rtl/feedguard.sv:152$37: $auto$alumacc.cc:548:replace_alu$1712
+  creating $alu cell for $le$rtl/feedguard.sv:156$43: $auto$alumacc.cc:548:replace_alu$1723
+  creating $alu cell for $lt$rtl/feedguard.sv:157$44, $gt$rtl/feedguard.sv:155$42: $auto$alumacc.cc:548:replace_alu$1732
+  creating $alu cell for $sub$rtl/feedguard.sv:158$46: $auto$alumacc.cc:548:replace_alu$1743
+  creating $alu cell for $sub$rtl/feedguard.sv:158$45: $auto$alumacc.cc:548:replace_alu$1746
+  creating $alu cell for $add$rtl/feedguard.sv:141$32: $auto$alumacc.cc:548:replace_alu$1749
+  created 6 $alu and 0 $macc cells.
+Extracting $alu and $macc cells in module omdc_envelope:
+  creating $macc model for $add$rtl/feedguard.sv:86$19 ($add).
+  creating $macc model for $sub$rtl/feedguard.sv:83$16 ($sub).
+  creating $macc model for $sub$rtl/feedguard.sv:68$10 ($sub).
+  creating $macc model for $add$rtl/feedguard.sv:38$6 ($add).
+  creating $macc model for $add$rtl/feedguard.sv:35$1 ($add).
+  creating $alu model for $macc $add$rtl/feedguard.sv:35$1.
+  creating $alu model for $macc $add$rtl/feedguard.sv:38$6.
+  creating $alu model for $macc $sub$rtl/feedguard.sv:68$10.
+  creating $alu model for $macc $sub$rtl/feedguard.sv:83$16.
+  creating $alu model for $macc $add$rtl/feedguard.sv:86$19.
+  creating $alu model for $ge$rtl/feedguard.sv:97$24 ($ge): new $alu
+  creating $alu model for $ge$rtl/feedguard.sv:96$21 ($ge): new $alu
+  creating $alu model for $lt$rtl/feedguard.sv:95$20 ($lt): merged with $ge$rtl/feedguard.sv:97$24.
+  creating $alu model for $lt$rtl/feedguard.sv:66$9 ($lt): merged with $sub$rtl/feedguard.sv:68$10.
+  creating $alu model for $gt$rtl/feedguard.sv:42$8 ($gt): new $alu
+  creating $alu model for $eq$rtl/feedguard.sv:84$17 ($eq): merged with $sub$rtl/feedguard.sv:83$16.
+  creating $alu cell for $gt$rtl/feedguard.sv:42$8: $auto$alumacc.cc:548:replace_alu$1755
+  creating $alu cell for $ge$rtl/feedguard.sv:96$21: $auto$alumacc.cc:548:replace_alu$1766
+  creating $alu cell for $ge$rtl/feedguard.sv:97$24, $lt$rtl/feedguard.sv:95$20: $auto$alumacc.cc:548:replace_alu$1779
+  creating $alu cell for $add$rtl/feedguard.sv:86$19: $auto$alumacc.cc:548:replace_alu$1792
+  creating $alu cell for $sub$rtl/feedguard.sv:83$16, $eq$rtl/feedguard.sv:84$17: $auto$alumacc.cc:548:replace_alu$1795
+  creating $alu cell for $sub$rtl/feedguard.sv:68$10, $lt$rtl/feedguard.sv:66$9: $auto$alumacc.cc:548:replace_alu$1800
+  creating $alu cell for $add$rtl/feedguard.sv:38$6: $auto$alumacc.cc:548:replace_alu$1805
+  creating $alu cell for $add$rtl/feedguard.sv:35$1: $auto$alumacc.cc:548:replace_alu$1808
+  created 8 $alu and 0 $macc cells.
+
+2.13. Executing SHARE pass (SAT-based resource sharing).
+
+2.14. Executing OPT pass (performing simple optimizations).
+
+2.14.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module feedguard_top.
+Optimizing module sequence_guard.
+<suppressed ~7 debug messages>
+Optimizing module omdc_envelope.
+<suppressed ~4 debug messages>
+
+2.14.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\feedguard_top'.
+Computing hashes of 3 cells of `\feedguard_top'.
+Finding duplicate cells in `\feedguard_top'.
+Finding identical cells in module `\sequence_guard'.
+Computing hashes of 68 cells of `\sequence_guard'.
+Finding duplicate cells in `\sequence_guard'.
+Finding identical cells in module `\omdc_envelope'.
+Computing hashes of 181 cells of `\omdc_envelope'.
+Finding duplicate cells in `\omdc_envelope'.
+Removed a total of 0 cells.
+
+2.14.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \feedguard_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \sequence_guard..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \omdc_envelope..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~149 debug messages>
+
+2.14.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \feedguard_top.
+  Optimizing cells in module \sequence_guard.
+  Optimizing cells in module \omdc_envelope.
+Performed a total of 0 changes.
+
+2.14.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\feedguard_top'.
+Computing hashes of 3 cells of `\feedguard_top'.
+Finding duplicate cells in `\feedguard_top'.
+Finding identical cells in module `\sequence_guard'.
+Computing hashes of 68 cells of `\sequence_guard'.
+Finding duplicate cells in `\sequence_guard'.
+Finding identical cells in module `\omdc_envelope'.
+Computing hashes of 181 cells of `\omdc_envelope'.
+Finding duplicate cells in `\omdc_envelope'.
+Removed a total of 0 cells.
+
+2.14.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.14.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \feedguard_top..
+Finding unused cells or wires in module \sequence_guard..
+Finding unused cells or wires in module \omdc_envelope..
+Removed 2 unused cells and 12 unused wires.
+<suppressed ~4 debug messages>
+
+2.14.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module feedguard_top.
+Optimizing module sequence_guard.
+Optimizing module omdc_envelope.
+
+2.14.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+2.14.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \feedguard_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \sequence_guard..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \omdc_envelope..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~149 debug messages>
+
+2.14.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \feedguard_top.
+  Optimizing cells in module \sequence_guard.
+  Optimizing cells in module \omdc_envelope.
+Performed a total of 0 changes.
+
+2.14.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\feedguard_top'.
+Computing hashes of 3 cells of `\feedguard_top'.
+Finding duplicate cells in `\feedguard_top'.
+Finding identical cells in module `\sequence_guard'.
+Computing hashes of 68 cells of `\sequence_guard'.
+Finding duplicate cells in `\sequence_guard'.
+Finding identical cells in module `\omdc_envelope'.
+Computing hashes of 179 cells of `\omdc_envelope'.
+Finding duplicate cells in `\omdc_envelope'.
+Removed a total of 0 cells.
+
+2.14.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.14.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \feedguard_top..
+Finding unused cells or wires in module \sequence_guard..
+Finding unused cells or wires in module \omdc_envelope..
+
+2.14.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module feedguard_top.
+Optimizing module sequence_guard.
+Optimizing module omdc_envelope.
+
+2.14.16. Finished fast OPT passes. (There is nothing left to do.)
+
+2.15. Executing MEMORY pass.
+
+2.15.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+2.15.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+2.15.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+2.15.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+2.15.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+2.15.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \feedguard_top..
+Finding unused cells or wires in module \sequence_guard..
+Finding unused cells or wires in module \omdc_envelope..
+
+2.15.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+2.15.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+2.15.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \feedguard_top..
+Finding unused cells or wires in module \sequence_guard..
+Finding unused cells or wires in module \omdc_envelope..
+
+2.15.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+2.16. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \feedguard_top..
+Finding unused cells or wires in module \sequence_guard..
+Finding unused cells or wires in module \omdc_envelope..
+
+2.17. Executing OPT pass (performing simple optimizations).
+
+2.17.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module feedguard_top.
+Optimizing module sequence_guard.
+<suppressed ~10 debug messages>
+Optimizing module omdc_envelope.
+<suppressed ~13 debug messages>
+
+2.17.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\feedguard_top'.
+Computing hashes of 3 cells of `\feedguard_top'.
+Finding duplicate cells in `\feedguard_top'.
+Finding identical cells in module `\sequence_guard'.
+Computing hashes of 92 cells of `\sequence_guard'.
+Finding duplicate cells in `\sequence_guard'.
+Finding identical cells in module `\omdc_envelope'.
+Computing hashes of 183 cells of `\omdc_envelope'.
+Finding duplicate cells in `\omdc_envelope'.
+Computing hashes of 179 cells of `\omdc_envelope'.
+Finding duplicate cells in `\omdc_envelope'.
+<suppressed ~12 debug messages>
+Removed a total of 4 cells.
+
+2.17.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.17.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \feedguard_top..
+Finding unused cells or wires in module \sequence_guard..
+Finding unused cells or wires in module \omdc_envelope..
+Removed 2 unused cells and 53 unused wires.
+<suppressed ~4 debug messages>
+
+2.17.5. Finished fast OPT passes.
+
+2.18. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+2.19. Executing OPT pass (performing simple optimizations).
+
+2.19.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module feedguard_top.
+Optimizing module sequence_guard.
+Optimizing module omdc_envelope.
+
+2.19.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\feedguard_top'.
+Computing hashes of 3 cells of `\feedguard_top'.
+Finding duplicate cells in `\feedguard_top'.
+Finding identical cells in module `\sequence_guard'.
+Computing hashes of 92 cells of `\sequence_guard'.
+Finding duplicate cells in `\sequence_guard'.
+Finding identical cells in module `\omdc_envelope'.
+Computing hashes of 177 cells of `\omdc_envelope'.
+Finding duplicate cells in `\omdc_envelope'.
+Removed a total of 0 cells.
+
+2.19.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \feedguard_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \sequence_guard..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \omdc_envelope..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~112 debug messages>
+
+2.19.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \feedguard_top.
+  Optimizing cells in module \sequence_guard.
+  Optimizing cells in module \omdc_envelope.
+    Consolidated identical input bits for $mux cell $procmux$825:
+      Old ports: A=3'100, B=3'000, Y=$3\n_phase[2:0]
+      New ports: A=1'1, B=1'0, Y=$3\n_phase[2:0] [2]
+      New connections: $3\n_phase[2:0] [1:0] = 2'00
+    Consolidated identical input bits for $mux cell $procmux$454:
+      Old ports: A={ \final_errors [3] \n_errors [2] 2'00 }, B=4'0000, Y=$procmux$454_Y
+      New ports: A={ \final_errors [3] \n_errors [2] }, B=2'00, Y=$procmux$454_Y [3:2]
+      New connections: $procmux$454_Y [1:0] = 2'00
+  Optimizing cells in module \omdc_envelope.
+Performed a total of 2 changes.
+
+2.19.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\feedguard_top'.
+Computing hashes of 3 cells of `\feedguard_top'.
+Finding duplicate cells in `\feedguard_top'.
+Finding identical cells in module `\sequence_guard'.
+Computing hashes of 92 cells of `\sequence_guard'.
+Finding duplicate cells in `\sequence_guard'.
+Finding identical cells in module `\omdc_envelope'.
+Computing hashes of 177 cells of `\omdc_envelope'.
+Finding duplicate cells in `\omdc_envelope'.
+Removed a total of 0 cells.
+
+2.19.6. Executing OPT_SHARE pass.
+
+2.19.7. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.19.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \feedguard_top..
+Finding unused cells or wires in module \sequence_guard..
+Finding unused cells or wires in module \omdc_envelope..
+
+2.19.9. Executing OPT_EXPR pass (perform const folding).
+Optimizing module feedguard_top.
+Optimizing module sequence_guard.
+Optimizing module omdc_envelope.
+<suppressed ~1 debug messages>
+
+2.19.10. Rerunning OPT passes. (Maybe there is more to do..)
+
+2.19.11. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \feedguard_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \sequence_guard..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \omdc_envelope..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~111 debug messages>
+
+2.19.12. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \feedguard_top.
+  Optimizing cells in module \sequence_guard.
+  Optimizing cells in module \omdc_envelope.
+Performed a total of 0 changes.
+
+2.19.13. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\feedguard_top'.
+Computing hashes of 3 cells of `\feedguard_top'.
+Finding duplicate cells in `\feedguard_top'.
+Finding identical cells in module `\sequence_guard'.
+Computing hashes of 92 cells of `\sequence_guard'.
+Finding duplicate cells in `\sequence_guard'.
+Finding identical cells in module `\omdc_envelope'.
+Computing hashes of 177 cells of `\omdc_envelope'.
+Finding duplicate cells in `\omdc_envelope'.
+Removed a total of 0 cells.
+
+2.19.14. Executing OPT_SHARE pass.
+
+2.19.15. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.19.16. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \feedguard_top..
+Finding unused cells or wires in module \sequence_guard..
+Finding unused cells or wires in module \omdc_envelope..
+
+2.19.17. Executing OPT_EXPR pass (perform const folding).
+Optimizing module feedguard_top.
+Optimizing module sequence_guard.
+Optimizing module omdc_envelope.
+
+2.19.18. Finished fast OPT passes. (There is nothing left to do.)
+
+2.20. Executing TECHMAP pass (map to technology primitives).
+
+2.20.1. Executing Verilog-2005 frontend: /share/techmap.v
+Parsing Verilog input from `/share/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu_brent_kung'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `$__div_mod_u'.
+Generating RTLIL representation for module `$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Generating RTLIL representation for module `$connect'.
+Generating RTLIL representation for module `$input_port'.
+Successfully finished Verilog frontend.
+
+2.20.2. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $not.
+Using template $paramod$f30f8fc2e30bd83d28cb1ad43b9d9ec083109075\_90_alu for cells of type $alu.
+Using template $paramod$2af30114e9bd4ccb04dad757b3f0a8f6bf0615b0\_90_alu for cells of type $alu.
+Using template $paramod$1ed7ec530b1ba361931392f2f8504f82ccdfecaa\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $reduce_and.
+Using template $paramod$a1665ef28c749ebcdbe9aecd466e644647b56463\_90_alu for cells of type $alu.
+Using template $paramod$53700bbee849b2010ad0b60a61ccd204a10e24ca\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $reduce_or.
+Using extmapper simplemap for cells of type $or.
+Using template $paramod$c15aee48e26a714a5f3d013cd387ce60c26c192c\_90_alu for cells of type $alu.
+Using template $paramod$83ece2cf35f01c50e0cf9e9cdede4b5976f51ea0\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $sdffe.
+Using extmapper simplemap for cells of type $sdff.
+Using extmapper simplemap for cells of type $reduce_bool.
+Using extmapper simplemap for cells of type $ne.
+Using extmapper simplemap for cells of type $logic_not.
+Using extmapper simplemap for cells of type $and.
+Using extmapper simplemap for cells of type $eq.
+Using extmapper simplemap for cells of type $dff.
+Using extmapper simplemap for cells of type $logic_or.
+Using extmapper simplemap for cells of type $logic_and.
+Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $pmux.
+Using extmapper simplemap for cells of type $pos.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000001111 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000001111 for cells of type $lcu.
+Using extmapper simplemap for cells of type $xor.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000010000 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000010000 for cells of type $lcu.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000001101 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000001101 for cells of type $lcu.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000001001 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000001001 for cells of type $lcu.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000001110 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000001110 for cells of type $lcu.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000010001 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000010001 for cells of type $lcu.
+Using template $paramod$c4f8c752de5d357f6284fb1aa5b7a6056857f8b6\_90_alu for cells of type $alu.
+Using template $paramod$a1bc51c02ce12ac21eb18988e83292af48ed7d72\_90_alu for cells of type $alu.
+Using template $paramod$789c344356a154d2afc7b832b41d1067dbc946ba\_90_alu for cells of type $alu.
+Using template $paramod$cc6a978c1b57cdb49efcec348c88d8e28bf1a01f\_90_alu for cells of type $alu.
+Using template $paramod$fc972a7a46956c1788f3cb5257b53c8f1df2d0cc\_90_alu for cells of type $alu.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000100001 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000100001 for cells of type $lcu.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000001000 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000001000 for cells of type $lcu.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000000001 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000000001 for cells of type $lcu.
+No more expansions possible.
+<suppressed ~2635 debug messages>
+
+2.21. Executing OPT pass (performing simple optimizations).
+
+2.21.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module feedguard_top.
+Optimizing module sequence_guard.
+<suppressed ~671 debug messages>
+Optimizing module omdc_envelope.
+<suppressed ~1382 debug messages>
+
+2.21.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\feedguard_top'.
+Computing hashes of 5 cells of `\feedguard_top'.
+Finding duplicate cells in `\feedguard_top'.
+Finding identical cells in module `\sequence_guard'.
+Computing hashes of 1201 cells of `\sequence_guard'.
+Finding duplicate cells in `\sequence_guard'.
+Computing hashes of 1115 cells of `\sequence_guard'.
+Finding duplicate cells in `\sequence_guard'.
+Computing hashes of 1085 cells of `\sequence_guard'.
+Finding duplicate cells in `\sequence_guard'.
+Computing hashes of 1071 cells of `\sequence_guard'.
+Finding duplicate cells in `\sequence_guard'.
+Computing hashes of 1063 cells of `\sequence_guard'.
+Finding duplicate cells in `\sequence_guard'.
+Computing hashes of 1061 cells of `\sequence_guard'.
+Finding duplicate cells in `\sequence_guard'.
+Computing hashes of 1057 cells of `\sequence_guard'.
+Finding duplicate cells in `\sequence_guard'.
+Computing hashes of 1055 cells of `\sequence_guard'.
+Finding duplicate cells in `\sequence_guard'.
+Computing hashes of 1050 cells of `\sequence_guard'.
+Finding duplicate cells in `\sequence_guard'.
+Computing hashes of 1047 cells of `\sequence_guard'.
+Finding duplicate cells in `\sequence_guard'.
+Computing hashes of 1044 cells of `\sequence_guard'.
+Finding duplicate cells in `\sequence_guard'.
+Computing hashes of 1043 cells of `\sequence_guard'.
+Finding duplicate cells in `\sequence_guard'.
+Computing hashes of 1042 cells of `\sequence_guard'.
+Finding duplicate cells in `\sequence_guard'.
+<suppressed ~477 debug messages>
+Finding identical cells in module `\omdc_envelope'.
+Computing hashes of 1973 cells of `\omdc_envelope'.
+Finding duplicate cells in `\omdc_envelope'.
+Computing hashes of 1722 cells of `\omdc_envelope'.
+Finding duplicate cells in `\omdc_envelope'.
+Computing hashes of 1637 cells of `\omdc_envelope'.
+Finding duplicate cells in `\omdc_envelope'.
+Computing hashes of 1610 cells of `\omdc_envelope'.
+Finding duplicate cells in `\omdc_envelope'.
+Computing hashes of 1602 cells of `\omdc_envelope'.
+Finding duplicate cells in `\omdc_envelope'.
+Computing hashes of 1595 cells of `\omdc_envelope'.
+Finding duplicate cells in `\omdc_envelope'.
+Computing hashes of 1591 cells of `\omdc_envelope'.
+Finding duplicate cells in `\omdc_envelope'.
+Computing hashes of 1590 cells of `\omdc_envelope'.
+Finding duplicate cells in `\omdc_envelope'.
+<suppressed ~1149 debug messages>
+Removed a total of 542 cells.
+
+2.21.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.21.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \feedguard_top..
+Finding unused cells or wires in module \sequence_guard..
+Finding unused cells or wires in module \omdc_envelope..
+Removed 287 unused cells and 1199 unused wires.
+<suppressed ~290 debug messages>
+
+2.21.5. Finished fast OPT passes.
+
+2.22. Executing ABC pass (technology mapping using ABC).
+
+2.22.1. Extracting gate netlist of module `\feedguard_top' to `<abc-temp-dir>/input.blif'..
