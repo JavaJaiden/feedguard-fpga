@@ -26,18 +26,8 @@ jobs:
           sudo apt-get install -y iverilog yosys
           mkdir -p out/rtl
           { python3 --version; iverilog -V; yosys -V; } > out/tool-versions.txt 2>&1
-      - name: Python tests
-        run: python3 -m unittest -v 2>&1 | tee out/python-tests.log
-      - name: RTL tests
-        run: python3 sim/check_rtl.py 2>&1 | tee out/rtl-tests.log
-      - name: Demo
-        run: |
-          python3 feedguard.py --output out/feedguard.json
-      - name: Generic structural checks
-        run: |
-          for top in omdc_envelope sequence_guard feedguard_top; do
-            yosys -Q -T -p "read_verilog -sv rtl/feedguard.sv; hierarchy -check -top $top; proc; opt; check -assert; stat" | tee "out/${top}-synthesis.log"
-          done
+      - name: Verify Python, integrated RTL, demos and generic synthesis
+        run: python3 verify.py
       - name: Upload results
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02

@@ -1,0 +1,82 @@
+[
+  {
+    "kind": 0,
+    "classification": "bootstrap",
+    "skip": 0,
+    "take": 3,
+    "expected": 103,
+    "packet_seq": 100,
+    "packet_count": 3,
+    "error": 0
+  },
+  {
+    "kind": 5,
+    "classification": "heartbeat",
+    "skip": 0,
+    "take": 0,
+    "expected": 103,
+    "packet_seq": 102,
+    "packet_count": 0,
+    "error": 0
+  },
+  {
+    "kind": 3,
+    "classification": "duplicate",
+    "skip": 0,
+    "take": 0,
+    "expected": 103,
+    "packet_seq": 100,
+    "packet_count": 3,
+    "error": 0
+  },
+  {
+    "kind": 4,
+    "classification": "gap",
+    "skip": 0,
+    "take": 0,
+    "expected": 103,
+    "packet_seq": 106,
+    "packet_count": 2,
+    "error": 0
+  },
+  {
+    "kind": 1,
+    "classification": "in_order",
+    "skip": 0,
+    "take": 3,
+    "expected": 106,
+    "packet_seq": 103,
+    "packet_count": 3,
+    "error": 0
+  },
+  {
+    "kind": 1,
+    "classification": "in_order",
+    "skip": 0,
+    "take": 2,
+    "expected": 108,
+    "packet_seq": 106,
+    "packet_count": 2,
+    "error": 0
+  },
+  {
+    "kind": 2,
+    "classification": "overlap",
+    "skip": 1,
+    "take": 2,
+    "expected": 110,
+    "packet_seq": 107,
+    "packet_count": 3,
+    "error": 0
+  },
+  {
+    "kind": 6,
+    "classification": "malformed",
+    "skip": 0,
+    "take": 0,
+    "expected": 110,
+    "packet_seq": 110,
+    "packet_count": 1,
+    "error": 4
+  }
+]

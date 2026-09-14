@@ -6,3 +6,4 @@ out/
 *.jou
 *.log
 !evidence/*.log
+.venv/

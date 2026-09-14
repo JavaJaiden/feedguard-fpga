@@ -1,0 +1,139 @@
+{
+  "status": "PASS",
+  "started_utc": "2026-09-14T23:34:58.645262+00:00",
+  "levels": {
+    "python": "PASS",
+    "rtl_simulation": {
+      "status": "PASS",
+      "engine": "Icarus Verilog",
+      "counts": {
+        "envelope_vectors": 410,
+        "sequence_vectors": 1013,
+        "integrated_packets": 438
+      },
+      "hardware_tested": false
+    },
+    "demo": {
+      "status": "PASS",
+      "backend": "Python reference",
+      "packets": 8
+    },
+    "generic_synthesis": {
+      "status": "PASS",
+      "tops": [
+        "omdc_envelope",
+        "sequence_guard",
+        "feedguard_top"
+      ]
+    }
+  },
+  "commands": [
+    {
+      "name": "python-tests",
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "-m",
+        "unittest",
+        "-v"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "iverilog-version",
+      "command": [
+        "iverilog",
+        "-V"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "rtl-tests",
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "sim/check_rtl.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "demo",
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "feedguard.py",
+        "--output",
+        "out/feedguard.json"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "replay",
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "replay.py",
+        "--trace",
+        "out/feedguard.json",
+        "--output",
+        "out/feedguard-replay.html"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "yosys-version",
+      "command": [
+        "/Users/jaiden/Documents/Codex/2026-09-14/use-this-handoff-package-to-continue/work/verification-venv/bin/yowasp-yosys",
+        "-V"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "synthesis-omdc_envelope",
+      "command": [
+        "/Users/jaiden/Documents/Codex/2026-09-14/use-this-handoff-package-to-continue/work/verification-venv/bin/yowasp-yosys",
+        "-Q",
+        "-T",
+        "-p",
+        "read_verilog -sv rtl/feedguard.sv; synth -top omdc_envelope; check -assert; stat"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "synthesis-sequence_guard",
+      "command": [
+        "/Users/jaiden/Documents/Codex/2026-09-14/use-this-handoff-package-to-continue/work/verification-venv/bin/yowasp-yosys",
+        "-Q",
+        "-T",
+        "-p",
+        "read_verilog -sv rtl/feedguard.sv; synth -top sequence_guard; check -assert; stat"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "synthesis-feedguard_top",
+      "command": [
+        "/Users/jaiden/Documents/Codex/2026-09-14/use-this-handoff-package-to-continue/work/verification-venv/bin/yowasp-yosys",
+        "-Q",
+        "-T",
+        "-p",
+        "read_verilog -sv rtl/feedguard.sv; synth -top feedguard_top; check -assert; stat"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "physical_board_tested": false,
+  "routed_timing_verified": false,
+  "source_sha256": {
+    ".github/workflows/verify.yml": "2c2841cf1940315d2136f135bfa710c004503d479af8b83aae512184ffa647d7",
+    "feedguard.py": "684421ab23fffb2a1f9a2b28a9fb59e1b4a760cf9e1fe11bf2febbf2d629812e",
+    "replay.py": "abb496a9a8aeee11a7d8f455bc310a7097402b6a9aec26b978bd9974a083983c",
+    "rtl/feedguard.sv": "6a9486437ba83475e74855118a44a98341c30bd8e46456e75f27444de57bb3ac",
+    "sim/check_rtl.py": "12f88782a48ab949e4436dc9c22fa4c52b1f1b0ac033cfcfc87cc31e467ce86d",
+    "sim/feedguard_top_tb.sv": "3160b5c704b9313c302599c479e56bd7f9c92e9b2b5c3e271eecbbb4f746d944",
+    "test_models.py": "6e4b02a01ad948cf9da364266f9eb6c6d80c2f45eccfa9de69af3ba9633f5228",
+    "test_replay.py": "f400ff02e6308ca7b91b816d3541338a81ab99298c6cf63ea603f0533d9883ef",
+    "verify.py": "e2a1d40d4285c2dd72baf53cb103efc78851b6e0cf96006eb1acf5f92682db02"
+  },
+  "base_commit": "50a5de9b384524eeacb3da9ce352a924d5c97adb",
+  "python": "3.14.6 (main, Jun 10 2026, 10:03:53) [Clang 21.0.0 (clang-2100.0.123.102)]",
+  "iverilog": "Icarus Verilog version 13.0 (stable) (v13_0)",
+  "yosys": "Yosys 0.69 (git sha1 9f75ca1f9, Release, Clang /workspace/YoWASP/yosys/wasi-sdk-33.0-x86_64-linux/share/cmake/../..//bin/clang++ 22.1.0)",
+  "finished_utc": "2026-09-14T23:35:06.007370+00:00"
+}

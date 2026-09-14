@@ -157,12 +157,50 @@ endmodule
 ''',['rtl/feedguard.sv'])
     return len(cases)
 
+
+def integrated_check() -> int:
+    """Exercise real packet bytes through BOTH stages with a concurrent sink."""
+    rng = random.Random(405)
+    guard = f.SequenceGuard()
+    cases = [(1, f.encode(100, []))]
+    for seq, count in [(100,3),(100,3),(106,2),(103,3),(106,2),(107,3)]:
+        cases.append((0, f.encode(seq, [(0xF001,b'LAB')] * count)))
+    base = f.encode(110, [(7,b'abcdef')])
+    cases += [(0, base[:n]) for n in range(1,len(base))]
+    cases += [(0, base), (1, f.encode(0xffffffff,[(7,b'')])),
+              (0,f.encode(0,[(7,b'')])), (0,f.encode(0,[]))]
+    for _ in range(400):
+        seq = rng.randrange(90,180)
+        packet = f.encode(seq, [(rng.randrange(65536),rng.randbytes(rng.randrange(12)))
+                               for _ in range(rng.randrange(6))])
+        if rng.random() < .2:
+            packet = packet[:rng.randrange(1,len(packet))]
+        cases.append((int(rng.random()<.03),packet))
+    # Exact capacity and over-capacity with a structurally complete message.
+    cases.append((1, f.encode(7,[(1,b'x'*1480)])))
+    large = bytearray(f.encode(8,[(1,b'x'*1480)])+b'x')
+    large[:2]=(1501).to_bytes(2,'little'); large[16:18]=(1485).to_bytes(2,'little')
+    cases.append((0,bytes(large)))
+    inputs, outputs = [], []
+    for reset, packet in cases:
+        if reset: guard.reset()
+        result=guard.accept(f.inspect(packet))
+        packed=(result['kind']<<49)|(result['skip']<<41)|(result['take']<<33)|(result['expected'] or 0)
+        inputs.append(f'{reset} {len(packet)} {packet.hex()}')
+        outputs.append(f'{packed:013x}')
+    (OUT/'integrated-input.txt').write_text('\n'.join(inputs)+'\n')
+    (OUT/'integrated-expected.txt').write_text('\n'.join(outputs)+'\n')
+    bench=(ROOT/'sim/feedguard_top_tb.sv').read_text().replace('__COUNT__',str(len(cases)))
+    simulate('feedguard_top_tb',bench,['rtl/feedguard.sv'])
+    return len(cases)
+
 def main() -> None:
     for tool in ('iverilog', 'vvp'):
         if not shutil.which(tool):
             raise SystemExit(f'{tool} is required; RTL verification NOT RUN')
     OUT.mkdir(parents=True, exist_ok=True)
-    counts = {'envelope_vectors': envelope_check(), 'sequence_vectors': sequence_check()}
+    counts = {'envelope_vectors': envelope_check(), 'sequence_vectors': sequence_check(),
+              'integrated_packets': integrated_check()}
     result = {'status': 'PASS', 'engine': 'Icarus Verilog',
               'counts': counts, 'hardware_tested': False}
     (OUT / 'results.json').write_text(json.dumps(result, indent=2) + '\n', encoding='utf-8')
